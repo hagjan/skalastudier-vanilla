@@ -15,8 +15,14 @@ class ArticleListComponent extends HTMLElement {
         }
         const ul = document.createElement('ul');
         items.forEach(item => {
+          const link = document.createElement('a')
+          link.href = `/pages/${item._id}/index.html`
+
           const title = document.createElement('h3')
           title.textContent = item.title
+
+          link.appendChild(title)
+
           const performer = document.createElement('p')
           performer.textContent = item.performer
           const area = document.createElement('p')
@@ -26,15 +32,12 @@ class ArticleListComponent extends HTMLElement {
           detail.appendChild(performer)
           detail.appendChild(area)
 
-          const link = document.createElement('a')
-          link.href = `/pages/articles/${item._id}.html`
-          link.appendChild(title)
-          link.appendChild(detail)
 
           
           const li = document.createElement('li');
           li.accessKey = item._id
           li.appendChild(link)
+          li.appendChild(detail)
 
           ul.appendChild(li);
         });

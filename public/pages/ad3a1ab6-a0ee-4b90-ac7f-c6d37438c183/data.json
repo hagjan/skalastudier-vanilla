@@ -1,0 +1,36 @@
+{
+    "_createdAt": "2022-11-21T10:31:38Z",
+    "_id": "ad3a1ab6-a0ee-4b90-ac7f-c6d37438c183",
+    "_updatedAt": "2022-11-22T01:08:29Z",
+    "area": "Uppstad/Valle, Setesdal",
+    "audio": "file-f6e9fc2b311b61cbb18baa9366b9842007f042f1-mp3",
+    "content": [
+      {
+        "content": [
+          "Himmelsk song av Gro Såvesdotter Berg (fødd Uppstad, 1883-1969). Opptaket er gjort i 1955 og utgjeve på CD'en \"Folkemusikk frå Agder\" (Grappa Musikkforlag, 1995). \n\nTeksta: \nAt elske vår Jesus er inderlig godt,\nså godt at det kan ei utsies.\nUaktet, jeg bliver til skovisk og spott,\nfor verden som ei kan forlikes."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Med frelseren og med hans salige hjord,\nsom følger ham efter og lyder hans ord,\nog en gang hans rike skal arve."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Med Guds folk eg derfor vil drage avsted,\ni korsdrakt på veien den trange.\nPå hinsides ørken, meg venter et sted,\nhvor jeg skal i herlighet prange."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Med klederne hvite, med palmer og krans,\nog skinne som solen i syvfoldig glans,\nå gjev dog den time var kommen."
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Gro Såvesdotter Berg",
+    "scala": "37c350a6-d029-4d50-9507-d865d1188bda",
+    "title": "At elske vår Jesus er inderlig godt"
+ } 

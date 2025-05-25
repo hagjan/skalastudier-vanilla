@@ -1,13 +1,15 @@
 @import url('./reset.css');
 @import url('./components/header.css');
 @import url('./components/article-list.css');
+@import url('./components/audio.css');
 
 html {
-  font-size: 18px;
+  font-size: 24px;
+  font-family: Alegreya;
 }
 
 body {
-  margin: 2rem;
+  margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -36,11 +38,30 @@ figcaption {
 }
 
 .quote>blockquote {
-  font-size: 1.275rem;
+  font-size: 1.2rem;
   margin: 0;
   padding: 0;
 }
 
 blockquote {
   font-style: italic;
+}
+
+.details {
+  margin: 1rem 0;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  p {
+    margin: 0.125rem 0;
+    white-space: nowrap;
+  }
+
+  > :first-child {
+    font-weight: bold;
+  }
 }

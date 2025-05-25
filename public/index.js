@@ -1,5 +1,6 @@
 import { registerHeaderComponent } from "./components/header";
 import { registerArticleListComponent } from "./components/article-list";
+import { registerAudioComponent } from "./components/audio";
 
 const app = () => {
     const template = document.querySelector('template#page');
@@ -7,6 +8,7 @@ const app = () => {
 
     registerHeaderComponent()
     registerArticleListComponent()
+    registerAudioComponent()
     
 }
 

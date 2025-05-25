@@ -1,0 +1,703 @@
+[
+  {
+    "_createdAt": "2021-01-25T22:06:08Z",
+    "_id": "09575473-bc3b-4a0e-b25e-e8e71ef1d7e4",
+    "_updatedAt": "2022-11-22T01:07:43Z",
+    "area": "Landsmarka, Telemark",
+    "audio": "file-90caf0d219cc0fc9815db83d2056ef469c353ca2-wav",
+    "content": [
+      {
+        "content": [
+          "Lina Holte (1893-1970) spelar Bordstabelen på langeleik."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Opptaka er gjort av Hallvard Kårstein 1955/56 og finst i Folkemusikkarkivet i Telemark"
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Arkivref. TFATd0045:6-8"
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Lina Holte",
+    "scala": "822e879c-0e10-4b0c-a6b9-35a0498e52f9",
+    "title": "Bordstabelen"
+  },
+  {
+    "_createdAt": "2023-03-22T10:11:32Z",
+    "_id": "0a3eaa3a-f84c-4f65-850c-21230df01680",
+    "_updatedAt": "2023-03-22T11:28:46Z",
+    "area": "Skjold, Rogaland",
+    "audio": "file-3748d18add0835314b6cc1bfee1321c6b79e5c37-m4a",
+    "content": [
+      {
+        "content": [
+          "ENOK OLSEN VESTRE (1882-1971)"
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Enok Olsen Vestre vart fødd på garden Plasset på Vestre i Skjold i Vindafjord i Rogaland."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Han song inn salmar på band for Rachel Thomassen som reiste rundt og samla folkemusikk på oppdrag for Universitetet i Oslo. "
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "ref": "image-d8d1da500470d51a0a8d9a533cd19a4573d8e167-2479x3508-png"
+        },
+        "type": "image"
+      },
+      {
+        "content": {
+          "ref": "image-06473e75c2f0d1674a9dae9fc012b949c28f7a8e-2479x3508-png"
+        },
+        "type": "image"
+      }
+    ],
+    "performer": "Enok Olsen Vestre",
+    "scala": "68267ba1-c2e7-4895-a62c-03bfcda0ed2b",
+    "title": "Når Jeg Betenker den Tid og Stund"
+  },
+  {
+    "_createdAt": "2022-11-21T10:05:50Z",
+    "_id": "1d4228ab-2109-458c-913b-01aafaaa23f8",
+    "_updatedAt": "2022-11-22T01:18:23Z",
+    "area": "Steinkjer",
+    "audio": "file-d29be8071b54c2793b8369ea9a4ba0e8740be755-mp3",
+    "content": [
+      {
+        "content": [
+          "Ei visetone spelt av Hilmar Alexandersen (1902-1993). Det er utgjeve på CD'en \"Folkemusikk frå Trøndelag\" (Grappa musikkforlag, 1995)"
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Hilmar Alexandersen",
+    "scala": "130a64ee-5aac-48cf-9a7d-184642cc4fb4",
+    "title": "Min falske venn"
+  },
+  {
+    "_createdAt": "2021-11-18T11:01:43Z",
+    "_id": "2970fd9b-849e-4a3e-a1cd-2dc98af0bdb0",
+    "_updatedAt": "2022-11-21T20:13:09Z",
+    "area": "Reinstemmingen",
+    "audio": null,
+    "content": [
+      {
+        "content": [
+          "Ein tonetabell med dei fleste av tonene me har funne samla på ein plass."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Tabellen visar trinn, intervallnamn (enkelte må sjåast på som forslag), tonehøyde (frekvens) i Hertz utregna fra referansetone, størrelse på intervall i cent (sjå innbyrdes avstander), cent 'avvik' fra nærmeste tempererte tone ± og harmonisk primtallsgrense (limit) for det enkelte intervall."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Det kan ha noko for seg å se på teller-talet som naturtoner (Groven) / overtoner altså toner fra den harmoniske tonerekka, og nevner-talet som prydtoner (Eggen) / undertoner altså toner fra den subharmoniske tonerekka.\nMed det som utgangspunkt, og med hjelp av ei navigering i begge dimensjoner kan ein nå et hav av toner."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Ei enkel innføring i harmonisk navigasjon ",
+          "her"
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Skalastudier.no",
+    "scala": "0120cdec-4666-4bd8-949e-19fb892b4f1a",
+    "title": "Tonetabell"
+  },
+  {
+    "_createdAt": "2022-11-21T10:47:54Z",
+    "_id": "2e1ccd2f-ef69-4cba-ba03-d314e54a7ca1",
+    "_updatedAt": "2022-11-22T01:09:15Z",
+    "area": "Lalm, Ottadalen",
+    "audio": "file-89aca1cc09933f3d855ef6c253cd0c3ea8ff6a35-m4a",
+    "content": [
+      {
+        "content": [
+          "Ola Eide (1901–1983) budde i Lalm der han dreiv som gardbrukar, felebyggjar og spelemann. Han hadde dei fleste slåttane sine etter bestefar sin, Ola Bråtå (1844–1923). Eide hadde ein gjennomgåande stødig tonalitet som kan minne om både fløytespel og kveding. "
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Ola Eide",
+    "scala": "e9f59961-3157-40ba-92d0-f58c3af0ffde",
+    "title": "Leiken hass Jakup"
+  },
+  {
+    "_createdAt": "2023-01-03T12:31:17Z",
+    "_id": "404a39fc-ac41-4481-a489-8335a2905c71",
+    "_updatedAt": "2023-01-03T12:41:17Z",
+    "area": "Åseral, Agder",
+    "audio": "file-5321cfa7c74c65729efdeaf65ff9446c330c031a-mp3",
+    "content": null,
+    "performer": "Gunvor og søster Uleberg",
+    "scala": "20d08b62-439d-436f-b7d0-1e35d8f70fba",
+    "title": "Kom Regn fra Det Høie"
+  },
+  {
+    "_createdAt": "2020-09-22T19:01:13Z",
+    "_id": "44f0cdec-ff95-4853-bd7e-495c86b70a6f",
+    "_updatedAt": "2022-11-21T20:22:21Z",
+    "area": "Vinje, Telemark",
+    "audio": "file-a01a933f533285afa8cbe5b861766bd97b54023a-wav",
+    "content": [
+      {
+        "content": [
+          "Aslak Brekke (1901–1978) var ein meister til å synge bygdeviser og hadde ein stødig tonalitet. "
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "25/24 er ein slags glidetone og det er ikkje tanken at han nyttar den som egen 'identitet', men meir som ein plass han lander, eller er innom, på veg mot grunntonen. Tersen varierer óg litt, og eg kunne ha tatt med både 6/5, 5/4 og 11/9 (og evt 16/13) men eg synst 27/22 speglar tonaliteten i opptaket bra og eg har vald å ikkje lage det altfor komplisert her. Litt av det same gjeld sekst'en, men eg har tatt med 2 forskjellige allikavel."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "ref": "image-f62dbc8868a80244184ca6450bfd2049b3a6b4a3-2179x3064-png"
+        },
+        "type": "image"
+      }
+    ],
+    "performer": "Aslak Brekke",
+    "scala": "8a8c7ee7-da91-4360-bf2e-98e2be935b6f",
+    "title": "Laurdagskvelden"
+  },
+  {
+    "_createdAt": "2022-11-21T10:07:15Z",
+    "_id": "486a0791-57ac-4abe-bbc2-c1f4793ed70c",
+    "_updatedAt": "2022-11-21T18:38:34Z",
+    "area": "Jondalen",
+    "audio": "file-69ee09d6e3e90d3963db151e7e8887ee9b2ea13e-mp3",
+    "content": [
+      {
+        "content": [
+          "Ein flott kulokk av Marit Jensen Lillebuen (1879-1975). Fleire kulokkar frå rundt om i landet liknar både i melodikk og tonalitet og denne tradisjonen er i så absolutt ein eigen studie verdig. \n\nOpptaket er gjeve ut av Buen Kulturverkstad. "
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Marit Jensen Lillebuen",
+    "scala": "686b5f7c-1ffa-4a47-8d28-80913fa95369",
+    "title": "Kulokk"
+  },
+  {
+    "_createdAt": "2022-11-21T10:11:19Z",
+    "_id": "4c732b25-469a-4d24-874b-4eb33547e5c9",
+    "_updatedAt": "2022-11-22T01:08:20Z",
+    "area": "Ål, Hallingdal",
+    "audio": "file-f4289919996d7953a7c088ef744a3d21cdcbb21c-mp3",
+    "content": [
+      {
+        "content": [
+          "Sevat Sataøen (1892-1962) frå Ål i Hallingdal var urmakar og felespelar. Han hadde ei nøyaktig tilnærming til både tonalitet og slåtteform og var også ein god dansespelemann. \n\nOpptaket er gjort av Hans Nestegard i 1958. "
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Sevat Sataøen",
+    "scala": "6d033781-db20-466a-9d09-2d5543807cea",
+    "title": "Den synste"
+  },
+  {
+    "_createdAt": "2022-11-21T10:45:32Z",
+    "_id": "51758180-a5cf-43f1-905a-563f573241cb",
+    "_updatedAt": "2022-11-22T01:08:51Z",
+    "area": "Garmo, Lom",
+    "audio": "file-4a489c4fe948b7c8e28eaad12a1bce94b901e3c4-mp3",
+    "content": [
+      {
+        "content": [
+          "Erling Kjøk (1913–1999) spelar ein budeisull etter mor si, Tina Kjøk (fødd Frisvold, 1887-1969). \n\nErling hadde stor slåttekunne og sterke meiningar om spel. "
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Erling Kjøk",
+    "scala": "3c7afca3-cd48-4f07-b8d9-cf377359e944",
+    "title": "Budeisull "
+  },
+  {
+    "_createdAt": "2024-06-18T10:46:51Z",
+    "_id": "54e856ab-b3c0-4de3-8bd9-9b16bdf9d1e0",
+    "_updatedAt": "2024-06-19T08:39:48Z",
+    "area": "Vindafjord, Rogaland",
+    "audio": "file-b1992741b26bd7455f43d821bbb7d2befe3b48ba-mp3",
+    "content": [
+      {
+        "content": [
+          "Denne liksongen kan nok, som alle andre, tolkes på forskjellige måtar. Den heilt nøytrale tersen er nokså sikker, andre trinn verker noko høgare enn vanleg, fjerde trinn verker som naturkvart, kvint er somme gonger litt høg, sekst verker noko høgare enn vanleg og septimen nøytral."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Tekst:"
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "https://hymnary.org/text/mit_haab_og_troest_og_al_tillid"
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Jone Slagstad",
+    "scala": "bd36a299-9df6-4e29-b6e6-f35241f8b475",
+    "title": "Mitt Haab og Trøst og Al Tillit"
+  },
+  {
+    "_createdAt": "2022-11-21T09:49:56Z",
+    "_id": "5b6601f9-175b-4b44-91b0-5406b7344877",
+    "_updatedAt": "2022-11-21T10:07:34Z",
+    "area": "Åseral",
+    "audio": null,
+    "content": null,
+    "performer": "Gunvor Uleberg",
+    "scala": "2582b68d-c180-40ba-aae8-179462ad1f4a",
+    "title": "Tor Brynjulf og fluga"
+  },
+  {
+    "_createdAt": "2023-03-22T09:43:52Z",
+    "_id": "5c9ddccc-cb28-40b5-93c9-e4c01ffc04a8",
+    "_updatedAt": "2023-03-22T10:11:13Z",
+    "area": "Suldal, Rogaland",
+    "audio": "file-7ab13480cfaa4fefe3a7243d515cabddf0a11b1a-mp3",
+    "content": [
+      {
+        "content": [
+          "Denne religiøse folketonen blei brukt som gravsalme i 'liksong' - tradisjonen i Ryfylke. Bertha Rafdal (1864-1960) syng. Opptaket er frå NRK / Nasjonalbiblioteket / Folkemusikkarkivet på Ryfylkemuseet."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "ref": "image-f53497b705d21214d8a5c4f757519ae5c2589000-2479x3508-png"
+        },
+        "type": "image"
+      }
+    ],
+    "performer": "Bertha Rafdal",
+    "scala": "a9333393-78fc-43ea-bda2-cac1ab6197fa",
+    "title": "Jeg Råder Eder Alle"
+  },
+  {
+    "_createdAt": "2022-11-21T10:03:23Z",
+    "_id": "75696f1d-90cb-4000-88db-caec32b0a092",
+    "_updatedAt": "2022-11-22T01:08:01Z",
+    "area": "Bøverdalen, Lom",
+    "audio": "file-9742d1dabd2806a1a8171a52a051dffcca82dd89-wav",
+    "content": [
+      {
+        "content": [
+          "Rønnaug Vangen (1898 - 1988) var ei veldig viktig kjelde for vokal folkemusikk i Ottadalen. Heldigvis vart ho godt dokumentert sidan NRK vitja henne ei rekkje gonger. Ho song helst då ho satt ved vevstolen, og åklene og løparane ho vov var etterspurde i samtida. \n\nLåvgrisen har veldig mange vers og det er mildt sagt utfordrande å halde ei jamn grunntone når ein syng åleine, så her tek vi med dei tre siste versa. \n\nHøyr gjerne alle versa på LP'en \"Norsk Folkemusikk - Folkeviser Riddarviser og Dyreviser\" (FLP102). "
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Rønnaug Vangen",
+    "scala": "867ed38a-e3ce-4c18-b57c-bd8a0f3d852c",
+    "title": "Låvgrisen"
+  },
+  {
+    "_createdAt": "2022-11-08T13:49:58Z",
+    "_id": "94e4923a-3b34-45bc-8f52-397b5b3ae49b",
+    "_updatedAt": "2022-11-15T11:32:29Z",
+    "area": "Setesdal",
+    "audio": null,
+    "content": [
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "url": "https://www.youtube.com/watch?v=W9JkUbMLac4"
+        },
+        "type": "youtube"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Her finn me fleire variantar av sekst'en, eg har valt å ta med 3 forskjellige slik at ein kan samanlikne. Eg har notert med grunntone F, men det er jo sjølsagt heilt relativt og Heddi Brokke syng på dette opptaket med grunntone ein stad mellom D# og E (viss A=440Hz). "
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "ref": "image-cafb9a4f4c7c43404ac7dd774ee552f425abbdcd-2483x3508-png"
+        },
+        "type": "image"
+      }
+    ],
+    "performer": "Gro Heddi Brokke",
+    "scala": "8d1061ca-82b2-459a-bd97-2e953ea1358f",
+    "title": "Der æ so vent"
+  },
+  {
+    "_createdAt": "2022-11-21T10:10:07Z",
+    "_id": "959dcfd6-06b9-4b05-b747-12bc391df1ef",
+    "_updatedAt": "2022-11-22T01:08:09Z",
+    "area": "Vestre Slidre, Valdres",
+    "audio": "file-a587f7e382c1c7d144541ee944277f439ba80643-mp3",
+    "content": [
+      {
+        "content": [
+          "Harald Fylken (1910-1963), spelte Perigarden i tradisjon etter Ivar Ringestad (1870-1953) som hadde den etter Jørn Røn (1843-1911). \n\nOpptaket er gjort av Gudbrand A. Brager i april 1962 og gjeve ut på CD'en \"Ringestadspel\" (Talik records, 2002). Med \"lang bogeføring og avansert fingerbruk\" er denne skiva absolutt verdt å studere."
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Harald Fylken",
+    "scala": "f7a11f6c-2c0a-48d2-941f-7069ad99e14f",
+    "title": "Perigarden"
+  },
+  {
+    "_createdAt": "2022-11-21T10:43:53Z",
+    "_id": "997bf6e6-56ad-4f5b-9cca-3a11c41ce8a2",
+    "_updatedAt": "2022-11-22T01:08:41Z",
+    "area": "Våler, Solør",
+    "audio": "file-22e14dce90895ac0aeb60d12c2cd6ad94fc1022b-wav",
+    "content": [
+      {
+        "content": [
+          "Gustav Kåterud (1882-1941) både song og spelte fele. Opptaket her er gjort av Eivind Groven i 1939. I løpet av dei 10 versa stig han nesten ein rein kvart, så for enkeltheits skuld tek vi berre med det fyrste. Men tonaliteten hans er likevel temmeleg gjennomgåande og eit eksempel til etterfølgjing. "
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Det er gjeve ut på den fine plata \"Sjugurd Og Trollbrura: Sangtradisjonen Frå Solør, Odal Og Finnskogen\" (Nordic Sound, 2002). "
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Gustad Kåterud",
+    "scala": "b13d2da4-3e65-4608-b1bc-cc2781224508",
+    "title": "Sjugurd og trollbrura"
+  },
+  {
+    "_createdAt": "2021-01-13T22:11:34Z",
+    "_id": "9b8003b8-87cd-41a3-bb22-8c969c4a02ca",
+    "_updatedAt": "2022-11-22T01:18:59Z",
+    "area": "Setesdal",
+    "audio": "file-fafef07b1f5ef9a55ff17acf9421e9f2ea145f16-m4a",
+    "content": [
+      {
+        "content": [
+          "Hildalen spelt av Andres K. Rysstad (1893-1984) på hardingfele.\nOpptak er frå Agder folkemusikkarkiv."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Andres K. Rysstad",
+    "scala": "ebffb4fc-9d43-4fa8-b28c-871806329634",
+    "title": "Hildalen"
+  },
+  {
+    "_createdAt": "2023-03-22T08:57:05Z",
+    "_id": "a46b9fa3-bc85-42af-abef-af4ee3f5caf6",
+    "_updatedAt": "2023-03-22T10:09:55Z",
+    "area": "Åseral, Agder",
+    "audio": null,
+    "content": [
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "url": "https://www.youtube.com/watch?v=SovMojDhTxI"
+        },
+        "type": "youtube"
+      },
+      {
+        "content": {
+          "caption": "Ingebjørg Liestøl (1900-1996)",
+          "ref": "image-a85052da10774ba88f9e25031873a02c196be884-599x610-jpg"
+        },
+        "type": "figure"
+      }
+    ],
+    "performer": "Ingebjørg Liestøl",
+    "scala": "362705d2-1b8c-464d-a896-10b3799327c5",
+    "title": "Rosensfolen"
+  },
+  {
+    "_createdAt": "2022-11-20T13:18:53Z",
+    "_id": "a7909ee1-9bcc-47f1-9e76-e79007f193d9",
+    "_updatedAt": "2022-11-20T13:18:53Z",
+    "area": "Åseral",
+    "audio": "file-5d2e1d96b2116e290bf0596485f62b977c6925f2-wav",
+    "content": null,
+    "performer": "Gunvor Uleberg",
+    "scala": "2b746ba2-8746-4628-b416-cd5e0ad29816",
+    "title": "Kai sit i loptsvol"
+  },
+  {
+    "_createdAt": "2022-11-02T09:37:43Z",
+    "_id": "aa4d115b-6671-4fe4-90b2-48dedc7d0aa6",
+    "_updatedAt": "2022-11-15T12:53:50Z",
+    "area": "Suldal, Rogaland",
+    "audio": null,
+    "content": [
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "url": "https://www.youtube.com/watch?v=WFtktkUGMLs"
+        },
+        "type": "youtube"
+      },
+      {
+        "content": [
+          ""
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "På dette opptaket kan det synast at grunntona stiger kontinuerleg. Ho begynner rundt 325 Hz og ender heilt oppe på rundt 340 Hz. Allikavel tykkjer eg dei valde tonene fungerer i forhold til kvarandre."
+        ],
+        "type": "text"
+      },
+      {
+        "content": {
+          "ref": "image-c5d4e768f7ddcf0ca1b8a573c1eaf4feb0e22b38-596x842-png"
+        },
+        "type": "image"
+      }
+    ],
+    "performer": "Odd Mehus/Anders Lund/Per Vetrhus",
+    "scala": "9036bdd4-58bd-4c55-9f7b-4d273afa0f5b",
+    "title": "O Verden Hav da Gode Nat!"
+  },
+  {
+    "_createdAt": "2022-11-21T10:31:38Z",
+    "_id": "ad3a1ab6-a0ee-4b90-ac7f-c6d37438c183",
+    "_updatedAt": "2022-11-22T01:08:29Z",
+    "area": "Uppstad/Valle, Setesdal",
+    "audio": "file-f6e9fc2b311b61cbb18baa9366b9842007f042f1-mp3",
+    "content": [
+      {
+        "content": [
+          "Himmelsk song av Gro Såvesdotter Berg (fødd Uppstad, 1883-1969). Opptaket er gjort i 1955 og utgjeve på CD'en \"Folkemusikk frå Agder\" (Grappa Musikkforlag, 1995). \n\nTeksta: \nAt elske vår Jesus er inderlig godt,\nså godt at det kan ei utsies.\nUaktet, jeg bliver til skovisk og spott,\nfor verden som ei kan forlikes."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Med frelseren og med hans salige hjord,\nsom følger ham efter og lyder hans ord,\nog en gang hans rike skal arve."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Med Guds folk eg derfor vil drage avsted,\ni korsdrakt på veien den trange.\nPå hinsides ørken, meg venter et sted,\nhvor jeg skal i herlighet prange."
+        ],
+        "type": "text"
+      },
+      {
+        "content": [
+          "Med klederne hvite, med palmer og krans,\nog skinne som solen i syvfoldig glans,\nå gjev dog den time var kommen."
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Gro Såvesdotter Berg",
+    "scala": "37c350a6-d029-4d50-9507-d865d1188bda",
+    "title": "At elske vår Jesus er inderlig godt"
+  },
+  {
+    "_createdAt": "2020-09-22T19:13:09Z",
+    "_id": "c735c3fd-f1bd-4634-9ee6-8e2581d33477",
+    "_updatedAt": "2022-11-22T10:06:39Z",
+    "area": "Bjerkreim, Rogaland",
+    "audio": null,
+    "content": [
+      {
+        "content": [
+          "Etter arkivopptak av ein Springar etter Ivar Fuglestad, óg kjent som Storøyguten"
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Ivar Fuglestad",
+    "scala": "5237300a-6926-4975-bc8b-08a29c563dc3",
+    "title": "Springar"
+  },
+  {
+    "_createdAt": "2024-06-18T10:11:35Z",
+    "_id": "d1702a45-9e2b-4a11-a202-2cc03a073981",
+    "_updatedAt": "2024-06-18T10:13:40Z",
+    "area": "Songesand, Rogaland",
+    "audio": "file-d08fa8d21b14418f75c9ab9132907ccc8555500d-mp3",
+    "content": [
+      {
+        "content": [
+          "Håkon Moen syng her fysste del av tonen, Klara Moen synger seinere resten av melodien i lignende tonalitet som kanskje kan seiast å vera typisk liksong-tonalitet med lågt andre trinn, nøytral ters, høg kvart, rein kvint, nøytral sekst og nøytral septim."
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Håkon og Klara Moen",
+    "scala": "ca70e4ab-9b30-43bf-8850-4c28bec4381b",
+    "title": "Kom, Menneske, at Skue Mig"
+  },
+  {
+    "_createdAt": "2021-01-25T22:27:36Z",
+    "_id": "e8634283-eab0-4df2-8658-fefc920e087e",
+    "_updatedAt": "2022-11-22T01:09:26Z",
+    "area": "Fen, Telemark",
+    "audio": "file-734be2531ae67f403e879ce772c56d6c9f8517f0-wav",
+    "content": [
+      {
+        "content": [
+          "Arthur Vibeto (1906–1971) spelar utrykksfullt på ein langeleik laga av Jens Brennebu (1829-1904)."
+        ],
+        "type": "text"
+      }
+    ],
+    "performer": "Artur Vibeto",
+    "scala": "9cbf870b-972f-4849-a8d9-5b7c6ff59966",
+    "title": "Huskulen"
+  }
+]
