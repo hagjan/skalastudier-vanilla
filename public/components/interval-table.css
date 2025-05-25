@@ -1,0 +1,12 @@
+x-interval-table table,
+x-interval-table th,
+x-interval-table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+x-interval-table table>thead>tr>th,
+x-interval-table table>tbody>tr>td {
+  text-align: left;
+  padding: 0.1rem 1rem 0.1rem 0.275rem;
+}

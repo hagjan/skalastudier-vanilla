@@ -1,6 +1,9 @@
 
 class AudioComponent extends HTMLElement {
   connectedCallback() {
+    const title = document.createElement('h3')
+    title.textContent = "Lydeksempel"
+
     const src = this.getAttribute('src');
     if (!src) {
       this.innerHTML = '<p>No audio source provided.</p>';
@@ -18,22 +21,9 @@ class AudioComponent extends HTMLElement {
     audio.textContent = "Your browser does not support the audio element."
     audio.appendChild(source);
     this.innerHTML = ''
+    this.appendChild(title)
     this.appendChild(audio)
   }
-  // static get observedAttributes() {
-  //   return ['src', 'alt'];
-  // }
-
-  // attributeChangedCallback() {
-  //   this.update();
-  // }
-
-  // update() {
-  //   const source = this.querySelector('source');
-  //   if (source) {
-  //     source.src = this.getAttribute('src');
-  //   }
-  // }
 }
 export const registerAudioComponent = () => {
   customElements.define('x-audio', AudioComponent);
