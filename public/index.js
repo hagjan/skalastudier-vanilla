@@ -4,6 +4,7 @@ import { registerAudioComponent } from "./components/audio";
 import { registerIntervalTableComponent } from "./components/interval-table";
 import { registerControlsComponent } from "./components/controls";
 import { registerYouTubeComponent } from "./components/youtube";
+import { registerKeysComponent } from "./components/keys";
 
 const app = () => {
   const template = document.querySelector('template#page');
@@ -15,11 +16,14 @@ const app = () => {
   registerIntervalTableComponent()
   registerControlsComponent()
   registerYouTubeComponent()
+  registerKeysComponent()
 
 
   let main = document.querySelector('main')
   let interval_table = document.querySelector('x-interval-table')
-  main.addEventListener('control', (e) =>  dispatchControlEvent(interval_table, e.detail))
+  let keys = document.querySelector('x-keys')
+  main.addEventListener('control_main', (e) =>  dispatchControlEvent(interval_table, e.detail))
+  main.addEventListener('control_main', (e) =>  dispatchControlEvent(keys, e.detail))
 
 }
 

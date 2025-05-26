@@ -30,6 +30,13 @@ class ControlsComponent extends HTMLElement {
     this.slider.addEventListener('input', () => {
       this.valueDisplay.textContent = parseFloat(this.slider.value).toFixed(1);
       dispatchControlEvent(this, { root: this.slider.value })
+      this.dispatchEvent(
+        new CustomEvent('control_main', {
+          detail: { root: this.slider.value },
+          bubbles: true,
+          composed: true
+        })
+      )
     });
   }
 
