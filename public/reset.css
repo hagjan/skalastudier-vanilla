@@ -16,6 +16,16 @@
   box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
 body,
 h1,
 h2,

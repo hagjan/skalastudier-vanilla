@@ -1,0 +1,8 @@
+x-controls div {
+  display: flex;
+  gap: 1rem;
+}
+
+x-controls div>input {
+  width: 100%;
+}

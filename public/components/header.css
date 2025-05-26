@@ -4,4 +4,12 @@ x-header ul {
   gap: 1rem;
   padding: 0;
   margin: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  line-height: 0.5rem;
+  ;
+}
+
+x-header li {
+  white-space: nowrap;
 }

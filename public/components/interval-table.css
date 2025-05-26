@@ -1,8 +1,19 @@
+x-interval-table div {
+  width: 100%;
+  overflow-x: auto;
+}
+
+x-interval-table table {
+  min-width: 800px;
+}
+
 x-interval-table table,
 x-interval-table th,
 x-interval-table td {
   border: 1px solid black;
   border-collapse: collapse;
+  white-space: nowrap;
+  width: 100%;
 }
 
 x-interval-table table>thead>tr>th,

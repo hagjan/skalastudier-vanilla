@@ -24,10 +24,6 @@ x-article-list h3 {
   font-size: 1rem;
 }
 
-x-article-list li:hover {
-  background-color: #ececec;
-}
-
 x-article-list a {
   flex: 4;
 }

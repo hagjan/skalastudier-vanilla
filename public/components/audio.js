@@ -2,7 +2,7 @@
 class AudioComponent extends HTMLElement {
   connectedCallback() {
     const title = document.createElement('h3')
-    title.textContent = "Lydeksempel"
+    title.textContent = "Lydopptak"
 
     const src = this.getAttribute('src');
     if (!src) {
