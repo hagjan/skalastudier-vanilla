@@ -1,9 +1,7 @@
 import { dispatchControlEvent } from "..";
 
 class ControlsComponent extends HTMLElement {
-  constructor() {
-    super();
-
+  connectedCallback() {
     // Create the slider input element
     this.slider = document.createElement('input');
     this.slider.type = 'range';
@@ -36,9 +34,7 @@ class ControlsComponent extends HTMLElement {
   }
 
   // Reflect attribute changes to the slider input
-  static get observedAttributes() {
-    return ['min', 'max', 'step', 'root'];
-  }
+  static observedAttributes = ['min', 'max', 'step', 'root'];
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (this.slider && oldValue !== newValue) {

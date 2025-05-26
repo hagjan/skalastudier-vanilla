@@ -9,10 +9,12 @@ class IntervalTableComponent extends HTMLElement {
   #root
   #interval_list
   #intervals
+
   connectedCallback() {
     this.addEventListener("control", (e) => {
       this.#root = e.detail.root;
-      this.update()})
+      this.update()
+    })
   
     const src = this.getAttribute('src');
     const intervals = this.getAttribute('intervals');
