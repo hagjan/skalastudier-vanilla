@@ -1,11 +1,6 @@
 
 const getCentValue = (num1, num2) => {
-
-  let value = Math.abs(Math.round(1200 * Math.log2(num2 / num1)));
-  console.log(num1, num2, value)
-  value = Math.abs(Math.round(1200 * Math.log2(num1 / num2)));
-  console.log(num1, num2, value)
-  return value
+  return Math.abs(Math.round(1200 * Math.log2(num2 / num1)));
 };
 
 class CentsTableComponent extends HTMLElement {
@@ -73,7 +68,7 @@ class CentsTableComponent extends HTMLElement {
 
       for (let i = 0; i < index; i++) {
         const td = document.createElement('th')
-        td.textContent = getCentValue(item.value, intervals[index].value)
+        td.textContent = getCentValue(item.value, intervals[i].value)
         tr.appendChild(td)
       }
 
