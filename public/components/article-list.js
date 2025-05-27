@@ -16,7 +16,7 @@ class ArticleListComponent extends HTMLElement {
         const ul = document.createElement('ul');
         items.sort((a,b) => a.title > b.title).forEach(item => {
           const link = document.createElement('a')
-          link.href = `/pages/${item._id}/`
+          link.href = `pages/${item._id}/`
 
           const title = document.createElement('h3')
           title.textContent = item.title
