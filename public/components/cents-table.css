@@ -13,12 +13,10 @@ x-cents-table th,
 x-cents-table td {
   border: 1px solid black;
   white-space: nowrap;
+  text-align: center;
   width: auto;
 }
 
-x-cents-table td {
-  width: auto;
-}
 
 x-cents-table table>thead>tr>th,
 x-cents-table table>tbody>tr>td {
