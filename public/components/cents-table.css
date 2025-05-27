@@ -16,6 +16,10 @@ x-cents-table td {
   width: 100%;
 }
 
+x-cents-table td {
+  width: auto;
+}
+
 x-cents-table table>thead>tr>th,
 x-cents-table table>tbody>tr>td {
   text-align: left;
