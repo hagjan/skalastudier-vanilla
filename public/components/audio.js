@@ -14,7 +14,7 @@ class AudioComponent extends HTMLElement {
 
     let source = document.createElement('source')
     source.type = "audio/mpeg";
-    source.setAttribute('src', src);
+    source.setAttribute('src', 'assets/audio/' + src);
     
     let audio = document.createElement('audio');
     audio.controls = true

@@ -13,13 +13,8 @@ class CentsTableComponent extends HTMLElement {
   #intervals
 
   connectedCallback() {
-    const src = this.getAttribute('src');
     const intervals = this.getAttribute('intervals');
 
-    if (!src) {
-      this.innerHTML = '<p>No JSON source provided.</p>';
-      return;
-    }
     if (!intervals) {
       this.innerHTML = '<p>No intervals provided.</p>';
       return;
@@ -27,7 +22,7 @@ class CentsTableComponent extends HTMLElement {
 
     this.#intervals = intervals.split(',')
 
-    fetch(src)
+    fetch('data/intervals.json')
       .then(response => response.json())
       .then(items => {
         if (!Array.isArray(items)) {

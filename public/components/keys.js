@@ -8,13 +8,8 @@ class KeysComponent extends HTMLElement {
     this.#synth = new Tone.Synth().toDestination();
     this.#synth.volume.value = -24
 
-    const src = this.getAttribute('src');
     const intervals = this.getAttribute('intervals');
-    
-    if (!src) {
-      this.innerHTML = '<p>No JSON source provided.</p>';
-      return;
-    }
+   
     if (!intervals) {
       this.innerHTML = '<p>No intervals provided.</p>';
       return;
@@ -33,7 +28,7 @@ class KeysComponent extends HTMLElement {
 
     this.#root = this.getAttribute('root') || 440.0
 
-    fetch(src)
+    fetch("data/intervals.json")
       .then(response => response.json())
       .then(items => {
         if (!Array.isArray(items)) {

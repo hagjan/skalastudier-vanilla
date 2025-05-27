@@ -1,12 +1,7 @@
 class ArticleListComponent extends HTMLElement {
   connectedCallback() {
-    const src = this.getAttribute('src');
-    if (!src) {
-      this.innerHTML = '<p>No JSON source provided.</p>';
-      return;
-    }
 
-    fetch(src)
+    fetch('data/article-list.json')
       .then(response => response.json())
       .then(items => {
         if (!Array.isArray(items)) {
