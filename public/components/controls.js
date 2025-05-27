@@ -1,4 +1,4 @@
-import { dispatchControlEvent } from "..";
+import { dispatchControlEvent } from "../index.js";
 
 class ControlsComponent extends HTMLElement {
   connectedCallback() {
