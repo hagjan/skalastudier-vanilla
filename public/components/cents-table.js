@@ -1,8 +1,10 @@
 
 const getCentValue = (num1, num2) => {
+
   let value = Math.abs(Math.round(1200 * Math.log2(num2 / num1)));
-  console.log(value)
+  console.log(num1, num2, value)
   value = Math.abs(Math.round(1200 * Math.log2(num1 / num2)));
+  console.log(num1, num2, value)
   return value
 };
 
