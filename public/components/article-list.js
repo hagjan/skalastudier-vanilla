@@ -9,7 +9,7 @@ class ArticleListComponent extends HTMLElement {
           return;
         }
         const ul = document.createElement('ul');
-        items.sort((a,b) => a.title > b.title).forEach(item => {
+        items.sort((a,b) => a.title > b.title ? 1 : -1).forEach(item => {
           const link = document.createElement('a')
           link.href = `pages/${item._id}/`
 

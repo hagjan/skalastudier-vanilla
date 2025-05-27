@@ -42,7 +42,7 @@ class CentsTableComponent extends HTMLElement {
     const title = document.createElement('h3')
     title.textContent = 'Innbyrdes avstander'
 
-    const intervals = this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a, b) => a.value > b.value)
+    const intervals = this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a, b) => a.value > b.value ? 1 : -1)
 
     const wrapper = document.createElement('div')
     const table = document.createElement('table')

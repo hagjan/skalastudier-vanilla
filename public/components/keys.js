@@ -47,7 +47,7 @@ class KeysComponent extends HTMLElement {
   update() {
     const wrapper = document.createElement('div')
     wrapper.style = 'width: 300px; height: 300px; background-color: yellow;'
-        this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a,b) => a.value > b.value).forEach(item => {
+        this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a,b) => a.value > b.value ? 1 : -1).forEach(item => {
           const button = document.createElement('button')
           button.textContent = item.fraction
           button.onclick = () => dispatchNote(wrapper, { value: item.value })
