@@ -10,7 +10,7 @@ class HeaderComponent extends HTMLElement {
         <nav>
           <ul>
             <li>
-              <a href=".">Heim</a>
+              <a href="">Heim</a>
             </li>
             <li>
               <a href="pages/articles.html">Artiklar</a>
