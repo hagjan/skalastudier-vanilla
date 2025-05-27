@@ -1,10 +1,10 @@
-import { registerHeaderComponent } from "./components/header";
-import { registerArticleListComponent } from "./components/article-list";
-import { registerAudioComponent } from "./components/audio";
-import { registerIntervalTableComponent } from "./components/interval-table";
-import { registerControlsComponent } from "./components/controls";
-import { registerYouTubeComponent } from "./components/youtube";
-import { registerKeysComponent } from "./components/keys";
+import { registerHeaderComponent } from "./components/header.js";
+import { registerArticleListComponent } from "./components/article-list.js";
+import { registerAudioComponent } from "./components/audio.js";
+import { registerIntervalTableComponent } from "./components/interval-table.js";
+import { registerControlsComponent } from "./components/controls.js";
+import { registerYouTubeComponent } from "./components/youtube.js";
+import { registerKeysComponent } from "./components/keys.js";
 
 const app = () => {
   const template = document.querySelector('template#page');
