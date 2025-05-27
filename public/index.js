@@ -2,6 +2,7 @@ import { registerHeaderComponent } from "./components/header.js";
 import { registerArticleListComponent } from "./components/article-list.js";
 import { registerAudioComponent } from "./components/audio.js";
 import { registerIntervalTableComponent } from "./components/interval-table.js";
+import { registerCentsTableComponent } from "./components/cents-table.js";
 import { registerControlsComponent } from "./components/controls.js";
 import { registerYouTubeComponent } from "./components/youtube.js";
 import { registerKeysComponent } from "./components/keys.js";
@@ -14,6 +15,7 @@ const app = () => {
   registerArticleListComponent()
   registerAudioComponent()
   registerIntervalTableComponent()
+  registerCentsTableComponent()
   registerControlsComponent()
   registerYouTubeComponent()
   registerKeysComponent()

@@ -1,0 +1,23 @@
+x-cents-table div {
+  width: 100%;
+  overflow-x: auto;
+}
+
+x-cents-table table {
+  min-width: 800px;
+}
+
+x-cents-table table,
+x-cents-table th,
+x-cents-table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  white-space: nowrap;
+  width: 100%;
+}
+
+x-cents-table table>thead>tr>th,
+x-cents-table table>tbody>tr>td {
+  text-align: left;
+  padding: 0.1rem 1rem 0.1rem 0.275rem;
+}

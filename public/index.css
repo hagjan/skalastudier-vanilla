@@ -3,6 +3,7 @@
 @import url('./components/article-list.css');
 @import url('./components/audio.css');
 @import url('./components/interval-table.css');
+@import url('./components/cents-table.css');
 @import url('./components/controls.css');
 
 html {
