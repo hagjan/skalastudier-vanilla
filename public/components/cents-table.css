@@ -5,15 +5,15 @@ x-cents-table div {
 
 x-cents-table table {
   min-width: 800px;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-x-cents-table table,
 x-cents-table th,
 x-cents-table td {
   border: 1px solid black;
-  border-collapse: collapse;
   white-space: nowrap;
-  width: 100%;
+  width: auto;
 }
 
 x-cents-table td {

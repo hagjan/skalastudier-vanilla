@@ -1,7 +1,12 @@
 
 const getCentValue = (num1, num2) => {
-  return Math.abs(Math.round(1200 * Math.log2(num2 / num1)));
+  const value = Math.round(1200 * Math.log2(num2 / num1));
+  if (value > 0) {
+    return '+' + value
+  }
+  return value
 };
+
 
 class CentsTableComponent extends HTMLElement {
   #interval_list
@@ -59,18 +64,19 @@ class CentsTableComponent extends HTMLElement {
 
     table.appendChild(tr)
 
-    intervals.forEach((item, index) => {
+    intervals.forEach(item => {
       const tr = document.createElement('tr')
 
       const th = document.createElement('th')
       th.textContent = item.fraction
       tr.appendChild(th)
 
-      for (let i = 0; i < index; i++) {
-        const td = document.createElement('th')
-        td.textContent = getCentValue(item.value, intervals[i].value)
+
+      intervals.forEach(inner => {
+        const td = document.createElement('td')
+        td.textContent = getCentValue(item.value, inner.value)
         tr.appendChild(td)
-      }
+      })
 
       table.appendChild(tr)
     })
