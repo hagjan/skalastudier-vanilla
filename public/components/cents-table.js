@@ -64,12 +64,12 @@ class CentsTableComponent extends HTMLElement {
 
       const th = document.createElement('th')
       th.textContent = item.fraction
-      tr.appendChild(step)
+      tr.appendChild(th)
 
       for (let i = 0; i < index; i++) {
         const td = document.createElement('th')
         td.textContent = getCentValue(item.value, intervals[index].value)
-        tr.appendChild(step)
+        tr.appendChild(td)
       }
 
       table.appendChild(tr)
