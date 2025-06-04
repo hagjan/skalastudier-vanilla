@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Bordstabelen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Bordstabelen</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Lina Holte</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Landsmarka, Telemark</p>
+      </div>
+    </div>
+    <div>
+      <p>Lina Holte (1893-1970) spelar Bordstabelen på langeleik.</p>
+      <p>Arkivref. TFATd0045:6-8</p>
+      <x-audio src="Bordstabelen.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="366.4"></x-controls>
+      <x-keys root="366.4" intervals="3/4,11/12,1/1,10/9,5/4,11/8,3/2,5/3,11/6,22/10"></x-keys>
+      <br>
+      <x-interval-table root="366.4" intervals="3/4,11/12,1/1,10/9,5/4,11/8,3/2,5/3,11/6,22/10"></x-interval-table>
+      <br>
+      <x-cents-table intervals="3/4,11/12,1/1,10/9,5/4,11/8,3/2,5/3,11/6,22/10"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

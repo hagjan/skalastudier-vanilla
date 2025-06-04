@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Budeisull</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Budeisull</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Erling Kjøk</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Garmo, Lom</p>
+      </div>
+    </div>
+    <div>
+      <p>Erling Kjøk (1913–1999) spelar ein budeisull etter mor si, Tina Kjøk (fødd Frisvold, 1887-1969).</p>
+      <p>Erling hadde stor slåttekunne og sterke meiningar om spel. </p>
+      <x-audio src="Budeisull.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="436"></x-controls>
+      <x-keys root="436" intervals="3/4,11/12,1/1,9/8,6/5,39/32,27/20,11/8,3/2,5/3,20/11,2/1"></x-keys>
+      <br>
+      <x-interval-table root="436"
+        intervals="3/4,11/12,1/1,9/8,6/5,39/32,27/20,11/8,3/2,5/3,20/11,2/1"></x-interval-table>
+      <br>
+      <x-cents-table intervals="3/4,11/12,1/1,9/8,6/5,39/32,27/20,11/8,3/2,5/3,20/11,2/1"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
