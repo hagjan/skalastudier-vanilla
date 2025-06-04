@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Hildalen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Hildalen</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Andres K. Rysstad</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Setesdal</p>
+      </div>
+    </div>
+    <div>
+      <p>Hildalen spelt av Andres K. Rysstad (1893-1984) på hardingfele.</p>
+      <p>Opptak er frå Agder folkemusikkarkiv.</p>
+      <x-audio src="Hildalen.m4a">
+      </x-audio>
+      <br>
+      <x-controls root="293.1"></x-controls>
+      <x-keys root="293.1"
+        intervals="13/14,1/1,9/8,16/13,5/4,27/20,11/8,3/2,5/3,11/6,2/1,9/4,5/2,11/4,3/1,10/3"></x-keys>
+      <br>
+      <x-interval-table root="293.1"
+        intervals="13/14,1/1,9/8,16/13,5/4,27/20,11/8,3/2,5/3,11/6,2/1,9/4,5/2,11/4,3/1,10/3"></x-interval-table>
+      <br>
+      <x-cents-table
+        intervals="13/14,1/1,9/8,16/13,5/4,27/20,11/8,3/2,5/3,11/6,2/1,9/4,5/2,11/4,3/1,10/3"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

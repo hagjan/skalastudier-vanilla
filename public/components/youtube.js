@@ -9,15 +9,19 @@ class YouTubeComponent extends HTMLElement {
     }
     if (this.querySelector('iframe')) return
 
+    const header = document.createElement('h3')
+    header.textContent = "Video"
     const wrapper = document.createElement('div')
     wrapper.style = "display: flex; width: 100%; justify-content: center;"
     const iframe = document.createElement('iframe')
-    iframe.width = '711px'
+    iframe.width = '100%'
+    // iframe.width = '711px'
     iframe.height= '400px'
     iframe.src = `https://www.youtube.com/embed/${id}`
 
     wrapper.appendChild(iframe)
 
+    this.appendChild(header)
     this.appendChild(wrapper)
   }
 }

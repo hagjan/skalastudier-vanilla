@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Kom, menneske, at skue mig</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Kom, Menneske, at Skue Mig</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Håkon og Klara Moen</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Songesand, Rogaland</p>
+      </div>
+    </div>
+    <div>
+      <p>Håkon Moen syng her fysste del av tonen, Klara Moen synger seinere resten av melodien i lignende tonalitet som
+        kanskje kan seiast å vera typisk liksong-tonalitet med lågt andre trinn, nøytral ters, høg kvart, rein kvint,
+        nøytral sekst og nøytral septim.</p>
+      <x-audio src="Kom menneske at skue mig.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="260"></x-controls>
+      <x-keys root="260" intervals="1/1,11/10,11/9,27/20,3/2,13/8,11/6"></x-keys>
+      <br>
+      <x-interval-table root="260" intervals="1/1,11/10,11/9,27/20,3/2,13/8,11/6"></x-interval-table>
+      <br>
+      <x-cents-table intervals="1/1,11/10,11/9,27/20,3/2,13/8,11/6"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

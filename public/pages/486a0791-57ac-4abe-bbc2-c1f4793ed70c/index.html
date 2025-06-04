@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Kulokk</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Kulokk</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Marit Jensen Lillebuen</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Jondalen, Kongsberg</p>
+      </div>
+    </div>
+    <div>
+      <p>Ein flott kulokk av Marit Jensen Lillebuen (1879-1975). Fleire kulokkar frå rundt om i landet liknar både i
+        melodikk og tonalitet og denne tradisjonen er i så absolutt ein eigen studie verdig.</p>
+      <p>Opptaket er gjeve ut av Buen Kulturverkstad.</p>
+      <x-audio src="Maritlokken.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="640"></x-controls>
+      <x-keys root="640" intervals="11/12,1/1,9/8,11/9,11/8,3/2,12/7,15/8,33/16,16/7"></x-keys>
+      <br>
+      <x-interval-table root="640" intervals="11/12,1/1,9/8,11/9,11/8,3/2,12/7,15/8,33/16,16/7"></x-interval-table>
+      <br>
+      <x-cents-table intervals="11/12,1/1,9/8,11/9,11/8,3/2,12/7,15/8,33/16,16/7"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

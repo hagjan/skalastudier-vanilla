@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Der æ so vent</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Der æ so vent</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Gro Heddi Brokke</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Setesdal</p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/images/deraesaavent.png">
+      <p>Her finn me fleire variantar av sekst'en, eg har valt å ta med 3 forskjellige slik at ein kan samanlikne. Eg
+        har notert med grunntone F, men det er jo sjølsagt heilt relativt og Heddi Brokke syng på dette opptaket med
+        grunntone ein stad mellom D# og E (viss A=440Hz).</p>
+      <x-youtube id="W9JkUbMLac4"></x-youtube>
+      <br>
+      <x-controls root="314.5"></x-controls>
+      <x-keys root="314.5" intervals="9/10,1/1,10/9,16/13,27/20,3/2,13/8,18/11,5/3,11/6,2/1"></x-keys>
+      <br>
+      <x-interval-table root="314.5"
+        intervals="9/10,1/1,10/9,16/13,27/20,3/2,13/8,18/11,5/3,11/6,2/1"></x-interval-table>
+      <br>
+      <x-cents-table intervals="9/10,1/1,10/9,16/13,27/20,3/2,13/8,18/11,5/3,11/6,2/1"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
