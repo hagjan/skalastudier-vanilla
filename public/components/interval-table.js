@@ -76,7 +76,7 @@ class IntervalTableComponent extends HTMLElement {
 
         const body = document.createElement('tbody')
 
-        this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a,b) => a.value > b.value ? 1 : -1).forEach(item => {
+        this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a,b) => a.value < b.value ? 1 : -1).forEach(item => {
 
           const tr = document.createElement('tr')
 

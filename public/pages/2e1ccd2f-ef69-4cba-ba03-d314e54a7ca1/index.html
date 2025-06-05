@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Leiken hass Jakup</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Leiken hass Jakup</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Ola Eide</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Lalm, Ottadalen</p>
+      </div>
+    </div>
+    <div>
+      <p>Ola Eide (1901–1983) budde i Lalm der han dreiv som gardbrukar, felebyggjar og spelemann. Han hadde dei fleste
+        slåttane sine etter bestefar sin, Ola Bråtå (1844–1923). Eide hadde ein gjennomgåande stødig tonalitet som kan
+        minne om både fløytespel og kveding.
+      </p>
+      <x-audio src="Leiken hass Jakup.m4a">
+      </x-audio>
+      <br>
+      <x-controls root="281"></x-controls>
+      <x-keys root="281" intervals="3/4,10/11,1/1,9/8,16/13,27/20,11/8,3/2,5/3,13/7,81/40"></x-keys>
+      <br>
+      <x-interval-table root="281" intervals="3/4,10/11,1/1,9/8,16/13,27/20,11/8,3/2,5/3,13/7,81/40"></x-interval-table>
+      <br>
+      <x-cents-table intervals="3/4,10/11,1/1,9/8,16/13,27/20,11/8,3/2,5/3,13/7,81/40"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

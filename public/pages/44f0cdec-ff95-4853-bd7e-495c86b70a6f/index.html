@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Laurdagskvelden</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Laurdagskvelden</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Aslak Brekke</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Vinje, Telemark</p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/images/laurdagskvelden.png">
+      <p>Aslak Brekke (1901–1978) var ein meister til å synge bygdeviser og hadde ein stødig tonalitet.</p>
+      <p>25/24 er ein slags glidetone og det er ikkje tanken at han nyttar den som egen 'identitet', men meir som ein
+        plass han lander, eller er innom, på veg mot grunntonen. Tersen varierer óg litt, og eg kunne ha tatt med både
+        6/5, 5/4 og 11/9 (og evt 16/13) men eg synst 27/22 speglar tonaliteten i opptaket bra og eg har vald å ikkje
+        lage det altfor komplisert her. Litt av det same gjeld sekst'en, men eg har tatt med 2 forskjellige allikavel.
+      </p>
+      <x-audio src="Laurdagskvelden.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="314.3"></x-controls>
+      <x-keys root="314.3" intervals="11/12,1/1,25/24,11/10,27/22,27/20,11/8,3/2,18/11,5/3,11/6,2/1"></x-keys>
+      <br>
+      <x-interval-table root="314.3"
+        intervals="11/12,1/1,25/24,11/10,27/22,27/20,11/8,3/2,18/11,5/3,11/6,2/1"></x-interval-table>
+      <br>
+      <x-cents-table intervals="11/12,1/1,25/24,11/10,27/22,27/20,11/8,3/2,18/11,5/3,11/6,2/1"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

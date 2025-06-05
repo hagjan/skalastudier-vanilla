@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - O verden hav da gode nat</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>O Verden Hav da Gode Nat!</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Odd Mehus/Anders Lund/Per Vetrhus</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Suldal, Rogaland</p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/images/overdenhavdagodenat.png">
+      <p>På dette opptaket kan det synast at grunntona stiger kontinuerleg. Ho begynner rundt 325 Hz og ender heilt oppe
+        på rundt 340 Hz. Allikavel tykkjer eg dei valde tonene fungerer i forhold til kvarandre.</p>
+      <x-youtube id="lBTwk3fwMs0"></x-youtube>
+      <x-audio src="O verden hav da gode nat.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="325"></x-controls>
+      <x-keys root="325" intervals="11/12,1/1,12/11,11/9,11/8,3/2,13/8"></x-keys>
+      <br>
+      <x-interval-table root="325" intervals="11/12,1/1,12/11,11/9,11/8,3/2,13/8"></x-interval-table>
+      <br>
+      <x-cents-table intervals="11/12,1/1,12/11,11/9,11/8,3/2,13/8"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

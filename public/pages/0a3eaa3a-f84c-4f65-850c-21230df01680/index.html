@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Når jeg betenker den tid og stund</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Når Jeg Betenker den Tid og Stund</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Enok Olsen Vestre</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Skjold, Rogaland</p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/images/naarjegbetenker.png">
+      <p>Enok Olsen Vestre (1882-1971) vart fødd på garden Plasset på Vestre i Skjold i Vindafjord i Rogaland.</p>
+      <p>Han song inn salmar på band for Rachel Thomassen som reiste rundt og samla folkemusikk på oppdrag for
+        Universitetet i Oslo.</p>
+      <x-audio src="Når jeg betenker den tid og stund.m4a">
+      </x-audio>
+      <br>
+      <x-controls root="211"></x-controls>
+      <x-keys root="211"
+        intervals="8/13,21/32,4/6,3/4,7/9,5/6,27/32,7/8,11/12,63/64,1/1,25/24,10/9,11/9,16/13"></x-keys>
+      <br>
+      <x-interval-table root="211"
+        intervals="8/13,21/32,4/6,3/4,7/9,5/6,27/32,7/8,11/12,63/64,1/1,25/24,10/9,11/9,16/13"></x-interval-table>
+      <br>
+      <x-cents-table
+        intervals="8/13,21/32,4/6,3/4,7/9,5/6,27/32,7/8,11/12,63/64,1/1,25/24,10/9,11/9,16/13"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Mitt haab og trøst og al tillit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Mitt Haab og Trøst og Al Tillit</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Jone Slagstad</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Vindafjord, Rogaland</p>
+      </div>
+    </div>
+    <div>
+      <p>Denne liksongen kan nok, som alle andre, tolkes på forskjellige måtar. Den heilt nøytrale tersen er nokså
+        sikker, andre trinn verker noko høgare enn vanleg, fjerde trinn verker som naturkvart, kvint er somme gonger
+        litt høg, sekst verker noko høgare enn vanleg og septimen nøytral.</p>
+      <a href="https://hymnary.org/text/mit_haab_og_troest_og_al_tillid" target="_blank">Du finner teksten her.</a>
+      <br>
+      <x-audio src="Mitt haab og trøst.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="232"></x-controls>
+      <x-keys root="232" intervals="1/1,9/8,11/9,11/8,3/2,32/21,27/16,11/6,2/1"></x-keys>
+      <br>
+      <x-interval-table root="232" intervals="1/1,9/8,11/9,11/8,3/2,32/21,27/16,11/6,2/1"></x-interval-table>
+      <br>
+      <x-cents-table intervals="1/1,9/8,11/9,11/8,3/2,32/21,27/16,11/6,2/1"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

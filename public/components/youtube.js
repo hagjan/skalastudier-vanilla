@@ -21,8 +21,10 @@ class YouTubeComponent extends HTMLElement {
 
     wrapper.appendChild(iframe)
 
+    const br = document.createElement('br')
     this.appendChild(header)
     this.appendChild(wrapper)
+    this.appendChild(br)
   }
 }
 

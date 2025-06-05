@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Låvgrisen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Låvgrisen</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Rønnaug Vangen</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Bøverdalen, Lom</p>
+      </div>
+    </div>
+    <div>
+      <p>Rønnaug Vangen (1898 - 1988) var ei veldig viktig kjelde for vokal folkemusikk i Ottadalen. Heldigvis vart ho
+        godt dokumentert sidan NRK vitja henne ei rekkje gonger. Ho song helst då ho satt ved vevstolen, og åklene og
+        løparane ho vov var etterspurde i samtida.
+      </p>
+      <p>Låvgrisen har veldig mange vers og det er mildt sagt utfordrande å halde ei jamn grunntone når ein syng åleine,
+        så her tek vi med dei tre siste versa.</p>
+      <p>Høyr gjerne alle versa på LP'en "Norsk Folkemusikk - Folkeviser Riddarviser og Dyreviser" (FLP102).</p>
+      <x-audio src="Låvgrisen.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="492"></x-controls>
+      <x-keys root="492" intervals="3/4,5/6,11/12,1/1,10/9,39/32,27/20,3/2"></x-keys>
+      <br>
+      <x-interval-table root="492" intervals="3/4,5/6,11/12,1/1,10/9,39/32,27/20,3/2"></x-interval-table>
+      <br>
+      <x-cents-table intervals="3/4,5/6,11/12,1/1,10/9,39/32,27/20,3/2"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
