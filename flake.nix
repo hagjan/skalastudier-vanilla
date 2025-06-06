@@ -17,6 +17,8 @@
       devShells.default = pkgs.mkShell {
         buildInputs = [
           pkgs.nodejs
+          pkgs.zig
+          pkgs.zls
           pkgs.superhtml
           pkgs.vscode-langservers-extracted
           pkgs.typescript-language-server
