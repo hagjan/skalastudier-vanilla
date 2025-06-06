@@ -1,6 +1,5 @@
 
 class KeysComponent extends HTMLElement {
-  #synth
   #root
   #interval_list
   #intervals
@@ -11,9 +10,31 @@ class KeysComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    this.loadWasm();
-    this.#synth = new Tone.Synth().toDestination();
-    this.#synth.volume.value = -24
+    (async () => {
+      const response = await fetch('synth.wasm');
+      const wasmBytes = await response.arrayBuffer();
+
+      const audioContext = new AudioContext({ sampleRate: 44100 });
+      // Pass wasmBytes to AudioWorkletProcessor via node options or port message
+      await audioContext.audioWorklet.addModule('synth-processor.js');
+
+      const synthNode = new AudioWorkletNode(audioContext, 'synth-processor', {
+        processorOptions: { wasmBytes }
+      });
+
+      synthNode.connect(audioContext.destination);
+
+      this.addEventListener('trigger', async (e) => {
+        // Resume AudioContext on user interaction (required by browsers)
+        if (audioContext.state !== 'running') {
+          await audioContext.resume();
+        }
+        // Send noteOn message with frequency 440 Hz and current time
+        synthNode.port.postMessage({ type: 'noteOn', frequency: e.detail.value * this.#root, currentTime: audioContext.currentTime });
+        setTimeout(() => synthNode.port.postMessage({ type: 'noteOff', currentTime: audioContext.currentTime }), 1000);
+      });
+
+    })();
 
     const intervals = this.getAttribute('intervals');
 
@@ -26,10 +47,6 @@ class KeysComponent extends HTMLElement {
       this.#root = e.detail.root
     })
 
-    this.addEventListener('trigger', async (e) => {
-      await Tone.start()
-      this.#synth.triggerAttackRelease(parseFloat(this.#root) * e.detail.value, "8n");
-    });
 
     this.#intervals = intervals.split(',')
 
@@ -52,10 +69,6 @@ class KeysComponent extends HTMLElement {
   }
 
   update() {
-    if (!this.wasmExports) {
-      this.innerHTML = `<p>Loading WASM...</p>`;
-      return;
-    }
     const wrapper = document.createElement('div')
     wrapper.style = 'width: 300px; height: 300px; background-color: yellow;'
     this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a, b) => a.value > b.value ? 1 : -1).forEach(item => {
@@ -65,35 +78,7 @@ class KeysComponent extends HTMLElement {
       wrapper.appendChild(button)
     })
 
-    console.log(this.wasmExports)
-    const test = document.createElement('span')
-    test.textContent = this.wasmExports.add(5, 123)
-    wrapper.appendChild(test)
     this.appendChild(wrapper)
-
-  }
-
-  async loadWasm() {
-    const importObject = {}; // your imports if needed
-
-// Using instantiateStreaming if supported:
-if ('instantiateStreaming' in WebAssembly) {
-  WebAssembly.instantiateStreaming(fetch('assets/math.wasm'), importObject)
-    .then(({ instance }) => {
-      // Use exported functions here
-      this.wasmExports = instance.exports
-    })
-    .catch(console.error);
-} else {
-  // Fallback for browsers without instantiateStreaming
-  fetch('assets/math.wasm')
-    .then(response => response.arrayBuffer())
-    .then(bytes => WebAssembly.instantiate(bytes, importObject))
-    .then(({ instance }) => {
-      console.log(instance.exports.add(3, 2));
-    })
-    .catch(console.error);
-}
 
   }
 }
@@ -109,5 +94,7 @@ function dispatchNote(elem, detail) {
 }
 
 
-export const registerKeysComponent = () =>
-  customElements.define('x-keys', KeysComponent)
+export const registerKeysComponent = () => {
+  if (!customElements.get('x-keys'))
+    customElements.define('x-keys', KeysComponent)
+}

@@ -85,5 +85,7 @@ class CentsTableComponent extends HTMLElement {
   }
 }
 
-export const registerCentsTableComponent = () =>
-  customElements.define('x-cents-table', CentsTableComponent);
+export const registerCentsTableComponent = () => {
+  if (!customElements.get('x-cents-table'))
+    customElements.define('x-cents-table', CentsTableComponent);
+}

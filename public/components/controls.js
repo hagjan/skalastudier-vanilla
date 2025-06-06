@@ -55,4 +55,7 @@ class ControlsComponent extends HTMLElement {
 
 
 export const registerControlsComponent = () =>
+{
+  if (!customElements.get('x-controls'))
   customElements.define('x-controls', ControlsComponent);
+}

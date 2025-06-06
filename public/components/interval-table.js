@@ -113,5 +113,7 @@ class IntervalTableComponent extends HTMLElement {
   }
 }
 
-export const registerIntervalTableComponent = () =>
-  customElements.define('x-interval-table', IntervalTableComponent);
+export const registerIntervalTableComponent = () => {
+  if (!customElements.get('x-interval-table'))
+    customElements.define('x-interval-table', IntervalTableComponent);
+}

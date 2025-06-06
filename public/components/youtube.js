@@ -16,7 +16,7 @@ class YouTubeComponent extends HTMLElement {
     const iframe = document.createElement('iframe')
     iframe.width = '100%'
     // iframe.width = '711px'
-    iframe.height= '400px'
+    iframe.height = '400px'
     iframe.src = `https://www.youtube.com/embed/${id}`
 
     wrapper.appendChild(iframe)
@@ -28,5 +28,7 @@ class YouTubeComponent extends HTMLElement {
   }
 }
 
-export const registerYouTubeComponent = () =>
-  customElements.define('x-youtube', YouTubeComponent)
+export const registerYouTubeComponent = () => {
+  if (!customElements.get('x-youtube'))
+    customElements.define('x-youtube', YouTubeComponent)
+}

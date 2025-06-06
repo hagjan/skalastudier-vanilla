@@ -9,7 +9,7 @@ class ArticleListComponent extends HTMLElement {
           return;
         }
         const ul = document.createElement('ul');
-        items.sort((a,b) => a.title > b.title ? 1 : -1).forEach(item => {
+        items.sort((a, b) => a.title > b.title ? 1 : -1).forEach(item => {
           const link = document.createElement('a')
           link.href = `pages/${item._id}/`
 
@@ -28,7 +28,7 @@ class ArticleListComponent extends HTMLElement {
           detail.appendChild(area)
 
 
-          
+
           const li = document.createElement('li');
           li.accessKey = item._id
           li.appendChild(link)
@@ -45,5 +45,7 @@ class ArticleListComponent extends HTMLElement {
   }
 }
 
-export const registerArticleListComponent = () => 
+export const registerArticleListComponent = () => {
+  if (!customElements.get('x-article-list'))
     customElements.define('x-article-list', ArticleListComponent);
+}

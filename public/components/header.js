@@ -32,5 +32,8 @@ class HeaderComponent extends HTMLElement {
 }
 
 export const registerHeaderComponent = 
-    () => customElements.define('x-header', HeaderComponent);
+    () => {
+      if (!customElements.get('x-header'))
+        customElements.define('x-header', HeaderComponent);
+    }
 

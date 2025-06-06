@@ -15,7 +15,7 @@ class AudioComponent extends HTMLElement {
     let source = document.createElement('source')
     source.type = "audio/mpeg";
     source.setAttribute('src', 'assets/audio/' + src);
-    
+
     let audio = document.createElement('audio');
     audio.controls = true
     audio.textContent = "Your browser does not support the audio element."
@@ -26,5 +26,6 @@ class AudioComponent extends HTMLElement {
   }
 }
 export const registerAudioComponent = () => {
-  customElements.define('x-audio', AudioComponent);
+  if (!customElements.get('x-audio'))
+    customElements.define('x-audio', AudioComponent);
 }
