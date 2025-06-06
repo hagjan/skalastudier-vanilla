@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Rosensfolen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Rosensfolen</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Ingebjørg Liestøl</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Åseral, Agder</p>
+      </div>
+    </div>
+    <div>
+      <figure>
+        <img src="assets/images/ingebjorgliestol.jpeg" alt="Foto av Ingebjørg Liestøl">
+        <figcaption>Ingebjørg Liestøl (1900-1996)</figcaption>
+      </figure>
+      <x-youtube id="SovMojDhTxI"></x-youtube>
+      <x-audio src="Huskulen.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="244"></x-controls>
+      <x-keys root="244" intervals="9/10,1/1,11/9,27/20,3/2,32/21,13/8"></x-keys>
+      <br>
+      <x-interval-table root="244" intervals="9/10,1/1,11/9,27/20,3/2,32/21,13/8"></x-interval-table>
+      <br>
+      <x-cents-table intervals="9/10,1/1,11/9,27/20,3/2,32/21,13/8"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

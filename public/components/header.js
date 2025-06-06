@@ -21,6 +21,9 @@ class HeaderComponent extends HTMLElement {
             <li>
               <a href="pages/resources.html">Ressursar</a>
             </li>
+            <li>
+              <a href="pages/intervals.html">Tonetabell</a>
+            </li>
           </ul>
         </nav>
       </header>

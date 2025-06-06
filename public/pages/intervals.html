@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastudier - Tonetabell</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script type="module" src="./index.js"></script>
+  <x-header></x-header>
+
+  <main>
+    <h1>Tonetabell</h1>
+    <p>
+      Ein tonetabell med dei fleste av tonene me har funne samla på ein plass.
+    </p>
+    <p>
+      Tabellen visar trinn, intervallnamn (enkelte må sjåast på som forslag), tonehøyde (frekvens) i Hertz utregna fra
+      referansetone, størrelse på intervall i cent (sjå innbyrdes avstander), cent 'avvik' fra nærmeste tempererte tone
+      ± og harmonisk primtallsgrense (limit) for det enkelte intervall.
+    </p>
+    <p>
+      Det kan ha noko for seg å se på teller-talet som naturtoner (Groven) / overtoner altså toner fra den harmoniske
+      tonerekka, og nevner-talet som prydtoner (Eggen) / undertoner altså toner fra den subharmoniske tonerekka.
+      Med det som utgangspunkt, og med hjelp av ei navigering i begge dimensjoner kan ein nå et hav av toner.
+    </p>
+    <x-interval-table></x-interval-table>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Perigarden</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Perigarden</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Harald Fylken</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Vestre Slidre, Valdres</p>
+      </div>
+    </div>
+    <div>
+      <p>Harald Fylken (1910-1963), spelte Perigarden i tradisjon etter Ivar Ringestad (1870-1953) som hadde den etter
+        Jørn Røn (1843-1911).</p>
+      <p>Opptaket er gjort av Gudbrand A. Brager i april 1962 og gjeve ut på CD'en "Ringestadspel" (Talik records,
+        2002). Med "lang bogeføring og avansert fingerbruk" er denne skiva absolutt verdt å studere.</p>
+      <x-audio src="Perigarden.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="336"></x-controls>
+      <x-keys root="336" intervals="15/16,1/1,9/8,5/4,27/20,3/2,27/16,15/8,2/1,9/4,5/2,11/4,3/1,27/8"></x-keys>
+      <br>
+      <x-interval-table root="336"
+        intervals="15/16,1/1,9/8,5/4,27/20,3/2,27/16,15/8,2/1,9/4,5/2,11/4,3/1,27/8"></x-interval-table>
+      <br>
+      <x-cents-table intervals="15/16,1/1,9/8,5/4,27/20,3/2,27/16,15/8,2/1,9/4,5/2,11/4,3/1,27/8"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

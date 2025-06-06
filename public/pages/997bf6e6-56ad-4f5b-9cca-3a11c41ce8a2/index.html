@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Sjugurd og trollbrura</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Sjugurd og trollbrura</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Gustad Kåterud</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Våler, Solør</p>
+      </div>
+    </div>
+    <div>
+      <p>Gustav Kåterud (1882-1941) både song og spelte fele. Opptaket her er gjort av Eivind Groven i 1939. I løpet av
+        dei 10 versa stig han nesten ein rein kvart, så for enkeltheits skuld tek vi berre med det fyrste. Men
+        tonaliteten hans er likevel temmeleg gjennomgåande og eit eksempel til etterfølgjing.</p>
+      <p>Det er gjeve ut på den fine plata "Sjugurd Og Trollbrura: Sangtradisjonen Frå Solør, Odal Og Finnskogen"
+        (Nordic Sound, 2002).</p>
+      <x-audio src="Sjugurd og trollbrura.mp3">
+      </x-audio>
+      <br>
+      <x-controls root="310"></x-controls>
+      <x-keys root="310" intervals="3/4,13/14,1/1,11/10,5/4,27/20,11/8,3/2,13/8"></x-keys>
+      <br>
+      <x-interval-table root="310" intervals="3/4,13/14,1/1,11/10,5/4,27/20,11/8,3/2,13/8"></x-interval-table>
+      <br>
+      <x-cents-table intervals="3/4,13/14,1/1,11/10,5/4,27/20,11/8,3/2,13/8"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

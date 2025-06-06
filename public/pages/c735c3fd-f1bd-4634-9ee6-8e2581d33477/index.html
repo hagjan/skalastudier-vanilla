@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nn">
+
+<head>
+  <base href="/skalastudier-vanilla/">
+  <title>Skalastuder - Springar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script src="http://unpkg.com/tone"></script>
+  <x-header></x-header>
+  <main>
+    <h2>Springar</h2>
+    <div class="details">
+      <div>
+        <p>Utøvar:</p>
+        <p>Ivar Fuglestad</p>
+      </div>
+      <div>
+        <p>Område:</p>
+        <p>Bjerkreim, Rogaland</p>
+      </div>
+    </div>
+    <div>
+      <p>Etter arkivopptak av ein Springar etter Ivar Fuglestad, óg kjent som Storøyguten</p>
+      <br>
+      <x-controls root="323"></x-controls>
+      <x-keys root="323" intervals="1/1,10/9,6/5,11/9,11/8,3/2,5/3,11/6,15/8,2/1,20/9,22/9"></x-keys>
+      <br>
+      <x-interval-table root="323"
+        intervals="1/1,10/9,6/5,11/9,11/8,3/2,5/3,11/6,15/8,2/1,20/9,22/9"></x-interval-table>
+      <br>
+      <x-cents-table intervals="1/1,10/9,6/5,11/9,11/8,3/2,5/3,11/6,15/8,2/1,20/9,22/9"></x-cents-table>
+    </div>
+  </main>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
