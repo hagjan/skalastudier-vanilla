@@ -6,12 +6,9 @@ class HeaderComponent extends HTMLElement {
 
     this.innerHTML = `
       <header>
-        <h1>Skalastudier</h1>
+        <h1><a href="">Skalastudier</a></h1>
         <nav>
           <ul>
-            <li>
-              <a href="">Heim</a>
-            </li>
             <li>
               <a href="pages/articles.html">Artiklar</a>
             </li>
