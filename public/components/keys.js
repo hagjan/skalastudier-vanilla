@@ -24,9 +24,6 @@ const charmap = {
   'm':22,
 }
 class KeysComponent extends HTMLElement {
-  #root
-  #interval_list
-  #intervals
 
   constructor() {
     super()
@@ -53,25 +50,25 @@ class KeysComponent extends HTMLElement {
       this.addEventListener('keydown', async (e) => {
         if (this.playingNotes.has(e.key)) return
         this.playingNotes.add(e.key)
-        const interval = this.#interval_list[charmap[e.key]]
+        const interval = this.interval_list[charmap[e.key]]
         if (!interval) return
         // Resume AudioContext on user interaction (required by browsers)
         if (audioContext.state !== 'running') {
           await audioContext.resume();
         }
-        synthNode.port.postMessage({ type: 'noteOn', frequency: interval.value * this.#root });
+        synthNode.port.postMessage({ type: 'noteOn', frequency: interval.value * this.root });
         
       })
 
       this.addEventListener('keyup', async (e) => {
         this.playingNotes.delete(e.key)
-        const interval = this.#interval_list[charmap[e.key]]
+        const interval = this.interval_list[charmap[e.key]]
         if (!interval) return
         // Resume AudioContext on user interaction (required by browsers)
         if (audioContext.state !== 'running') {
           await audioContext.resume();
         }
-        synthNode.port.postMessage({ type: 'noteOff', frequency: interval.value * this.#root });
+        synthNode.port.postMessage({ type: 'noteOff', frequency: interval.value * this.root });
         
       })
 
@@ -85,8 +82,8 @@ class KeysComponent extends HTMLElement {
 
         } else {
           // Send noteOn message with frequency 440 Hz and current time
-          synthNode.port.postMessage({ type: 'noteOn', frequency: e.detail.value * this.#root });
-          if (!this.hold) setTimeout(() => synthNode.port.postMessage({ type: 'noteOff', frequency: e.detail.value * this.#root }), 1000);
+          synthNode.port.postMessage({ type: 'noteOn', frequency: e.detail.value * this.root });
+          if (!this.hold) setTimeout(() => synthNode.port.postMessage({ type: 'noteOff', frequency: e.detail.value * this.root }), 1000);
         }
       });
 
@@ -100,13 +97,13 @@ class KeysComponent extends HTMLElement {
     }
 
     this.addEventListener('control', (e) => {
-      this.#root = e.detail.root
+      this.root = e.detail.root
     })
 
 
-    this.#intervals = intervals.split(',')
+    this.intervals = intervals.split(',')
 
-    this.#root = this.getAttribute('root') || 440.0
+    this.root = this.getAttribute('root') || 440.0
 
     fetch("data/intervals.json")
       .then(response => response.json())
@@ -115,7 +112,7 @@ class KeysComponent extends HTMLElement {
           this.innerHTML = '<p>Invalid JSON format.</p>';
           return;
         }
-        this.#interval_list = items
+        this.interval_list = items.filter(item => this.intervals.includes(item.fraction)).sort((a,b) => a.value > b.value ? 1 : -1)
 
         this.update()
       })
@@ -126,7 +123,7 @@ class KeysComponent extends HTMLElement {
 
   update() {
     const wrapper = document.createElement('div')
-    this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a, b) => a.value > b.value ? 1 : -1).forEach(item => {
+    this.interval_list.forEach(item => {
       const button = document.createElement('button')
       button.textContent = item.fraction
       button.onclick = () => dispatchNote(wrapper, { value: item.value })
