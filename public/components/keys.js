@@ -1,4 +1,28 @@
-
+const charmap = {
+  'q': 0,
+  'w': 1,
+  'e': 2,
+  'r': 3,
+  't': 4,
+  'y':5,
+  'u': 6,
+  'i':7,
+  'a':8,
+  's':9,
+  'd':10,
+  'f':11,
+  'g':12,
+  'h':13,
+  'j':14,
+  'k':15,
+  'z':16,
+  'x':17,
+  'c':18,
+  'v':19,
+  'b':20,
+  'n':21,
+  'm':22,
+}
 class KeysComponent extends HTMLElement {
   #root
   #interval_list
@@ -7,6 +31,8 @@ class KeysComponent extends HTMLElement {
   constructor() {
     super()
     this.wasmExports = null;
+    this.hold = false
+    this.playingNotes = new Set()
   }
 
   connectedCallback() {
@@ -24,14 +50,44 @@ class KeysComponent extends HTMLElement {
 
       synthNode.connect(audioContext.destination);
 
+      this.addEventListener('keydown', async (e) => {
+        if (this.playingNotes.has(e.key)) return
+        this.playingNotes.add(e.key)
+        const interval = this.#interval_list[charmap[e.key]]
+        if (!interval) return
+        // Resume AudioContext on user interaction (required by browsers)
+        if (audioContext.state !== 'running') {
+          await audioContext.resume();
+        }
+        synthNode.port.postMessage({ type: 'noteOn', frequency: interval.value * this.#root });
+        
+      })
+
+      this.addEventListener('keyup', async (e) => {
+        this.playingNotes.delete(e.key)
+        const interval = this.#interval_list[charmap[e.key]]
+        if (!interval) return
+        // Resume AudioContext on user interaction (required by browsers)
+        if (audioContext.state !== 'running') {
+          await audioContext.resume();
+        }
+        synthNode.port.postMessage({ type: 'noteOff', frequency: interval.value * this.#root });
+        
+      })
+
       this.addEventListener('trigger', async (e) => {
         // Resume AudioContext on user interaction (required by browsers)
         if (audioContext.state !== 'running') {
           await audioContext.resume();
         }
-        // Send noteOn message with frequency 440 Hz and current time
-        synthNode.port.postMessage({ type: 'noteOn', frequency: e.detail.value * this.#root, currentTime: audioContext.currentTime });
-        setTimeout(() => synthNode.port.postMessage({ type: 'noteOff', currentTime: audioContext.currentTime }), 1000);
+        if (e.detail.value === null) {
+          synthNode.port.postMessage({ type: 'allOff' });
+
+        } else {
+          // Send noteOn message with frequency 440 Hz and current time
+          synthNode.port.postMessage({ type: 'noteOn', frequency: e.detail.value * this.#root });
+          if (!this.hold) setTimeout(() => synthNode.port.postMessage({ type: 'noteOff', frequency: e.detail.value * this.#root }), 1000);
+        }
       });
 
     })();
@@ -70,7 +126,6 @@ class KeysComponent extends HTMLElement {
 
   update() {
     const wrapper = document.createElement('div')
-    wrapper.style = 'width: 300px; height: 300px; background-color: yellow;'
     this.#interval_list.filter(item => this.#intervals.includes(item.fraction)).sort((a, b) => a.value > b.value ? 1 : -1).forEach(item => {
       const button = document.createElement('button')
       button.textContent = item.fraction
@@ -79,6 +134,29 @@ class KeysComponent extends HTMLElement {
     })
 
     this.appendChild(wrapper)
+    const button = document.createElement('button')
+    button.textContent = "Stop all"
+    button.onclick = () => dispatchNote(wrapper, { value: null })
+    this.appendChild(button)
+    const button2 = document.createElement('button')
+    const button3 = document.createElement('button')
+    button2.textContent = "Trigger mode"
+    button2.disabled = true
+    button2.onclick = () => {
+        this.hold = false
+        button3.disabled = false
+        button2.disabled = true
+    }
+    button3.textContent = "Hold mode"
+    button3.onclick = () => {
+        this.hold = true
+        button2.disabled = false
+        button3.disabled = true
+    }
+
+    this.appendChild(button2)
+    this.appendChild(button3)
+    this.focus()
 
   }
 }

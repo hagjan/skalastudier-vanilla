@@ -3,110 +3,97 @@ const math = std.math;
 
 pub const SampleRate = 44100;
 pub const TwoPi = 2.0 * math.pi;
+pub const VoiceLimit = 32;
+
+extern fn print(a: u32) void;
+
+var allocator = std.heap.wasm_allocator;
 
 pub const ADSR = struct {
-    attack: f32,
-    decay: f32,
-    sustain: f32,
-    release: f32,
+    attack_amplitude: f32 = 1.0,
+    attack_time: f32 = 0.01,
+    decay_time: f32 = 0.1,
+    sustain_amplitude: f32 = 0.6,
+    release_time: f32 = 0.2,
+
+    trigger_on_time: f32 = 0,
+    trigger_off_time: f32 = 0,
 
     state: enum { idle, attack, decay, sustain, release } = .idle,
-    time: f32 = 0,
-    note_on_time: f32 = 0,
-    note_off_time: f32 = 0,
-    amplitude: f32 = 0,
 
-    pub fn noteOn(self: *ADSR, current_time: f32) void {
+    pub fn note_on(self: *ADSR, current_time: f32) void {
         self.state = .attack;
-        self.note_on_time = current_time;
-        self.time = 0;
+        self.trigger_on_time = current_time;
     }
 
-    pub fn noteOff(self: *ADSR, current_time: f32) void {
+    pub fn note_off(self: *ADSR, current_time: f32) void {
         self.state = .release;
-        self.note_off_time = current_time;
-        self.time = 0;
+        self.trigger_off_time = current_time;
     }
 
-    pub fn process(self: *ADSR, dt: f32) f32 {
-        self.time += dt;
-        switch (self.state) {
-            .idle => return 0,
-            .attack => {
-                self.amplitude = self.time / self.attack;
-                if (self.time >= self.attack) {
-                    self.state = .decay;
-                    self.time = 0;
-                }
-                return @min(self.amplitude, 1.0);
-            },
-            .decay => {
-                const decay_progress = self.time / self.decay;
-                self.amplitude = 1.0 - decay_progress * (1.0 - self.sustain);
-                if (self.time >= self.decay) {
-                    self.state = .sustain;
-                    self.amplitude = self.sustain;
-                }
-                return self.amplitude;
-            },
-            .sustain => return self.sustain,
-            .release => {
-                const release_progress = self.time / self.release;
-                self.amplitude = self.sustain * (1.0 - release_progress);
-                if (self.time >= self.release) {
-                    self.state = .idle;
-                    self.amplitude = 0;
-                }
-                return @max(self.amplitude, 0);
-            },
+    pub fn process(self: *ADSR, current_time: f32) f32 {
+        var amplitude: f32 = 0;
+        var release_amplitude: f32 = 0;
+
+        if (self.trigger_on_time > self.trigger_off_time) {
+            const lifetime = current_time - self.trigger_on_time;
+
+            if (lifetime <= self.attack_time) {
+                amplitude = (lifetime / self.attack_time) * self.attack_amplitude;
+            }
+
+            if (lifetime > self.attack_time and lifetime <= (self.attack_time + self.decay_time)) {
+                self.state = .decay;
+                amplitude = ((lifetime - self.attack_time) / self.decay_time) * (self.sustain_amplitude - self.attack_amplitude) + self.attack_amplitude;
+            }
+
+            if (lifetime > (self.attack_time + self.decay_time)) {
+                self.state = .sustain;
+                amplitude = self.sustain_amplitude;
+            }
+        } else {
+            const lifetime = self.trigger_off_time - self.trigger_on_time;
+            if (lifetime >= self.attack_time) {
+                release_amplitude = (lifetime / self.attack_time) * self.attack_amplitude;
+            }
+
+            if (lifetime > self.attack_time and lifetime <= self.attack_time + self.decay_time) {
+                release_amplitude = ((lifetime - self.attack_time) / self.decay_time) * (self.sustain_amplitude - self.attack_amplitude) + self.attack_amplitude;
+            }
+
+            if (lifetime > (self.attack_time + self.decay_time)) {
+                release_amplitude = self.sustain_amplitude;
+            }
+
+            amplitude = ((current_time - self.trigger_off_time) / self.release_time) * (0.0 - release_amplitude) + release_amplitude;
         }
+
+        if (amplitude <= 0.0) {
+            self.state = .idle;
+            return 0.0;
+        }
+
+        return amplitude;
     }
 };
 
-pub const Synth = struct {
+pub const Voice = struct {
     phase: f32 = 0,
     frequency: f32 = 440,
-    adsr: ADSR = ADSR{
-        .attack = 0.1,
-        .decay = 0.2,
-        .sustain = 0.7,
-        .release = 0.5,
-        .state = .idle,
-        .time = 0,
-        .note_on_time = 0,
-        .note_off_time = 0,
-        .amplitude = 0,
-    },
+    adsr: ADSR = ADSR{},
     sample_rate: f32 = SampleRate,
-    playing: bool = false,
-    trigger_start_time: f32 = 0,
+    scaling_factor: f32 = 1,
 
-    pub fn noteOn(self: *Synth, freq: f32, current_time: f32) void {
-        self.frequency = freq;
-        self.adsr.noteOn(current_time);
-        self.playing = true;
-        self.trigger_start_time = current_time;
+    pub fn note_on(self: *Voice, current_time: f32) void {
+        self.adsr.note_on(current_time);
     }
 
-    pub fn noteOff(self: *Synth, current_time: f32) void {
-        self.adsr.noteOff(current_time);
+    pub fn note_off(self: *Voice, current_time: f32) void {
+        self.adsr.note_off(current_time);
     }
 
-    pub fn triggerNote(self: *Synth, freq: f32, current_time: f32) void {
-        self.noteOn(freq, current_time);
-        // The note will play for 3 seconds then noteOff will be called externally
-    }
-
-    pub fn renderSample(self: *Synth) f32 {
-        if (!self.playing) return 0;
-
-        const dt = 1.0 / self.sample_rate;
-        const amplitude = self.adsr.process(dt);
-
-        if (self.adsr.state == .idle) {
-            self.playing = false;
-            return 0;
-        }
+    pub fn render_sample(self: *Voice, current_time: f32) f32 {
+        const amplitude = self.adsr.process(current_time) * self.scaling_factor;
 
         self.phase += TwoPi * self.frequency / self.sample_rate;
         if (self.phase > TwoPi) self.phase -= TwoPi;
@@ -115,22 +102,121 @@ pub const Synth = struct {
     }
 };
 
+pub const Synth = struct {
+    buffer: []f32,
+    sample_rate: f32 = SampleRate,
+    delta: f32 = 1 / SampleRate,
+    voices: [VoiceLimit]Voice = undefined,
+    time: f32 = 0,
+    voice_count: u8 = 0,
+
+    const Self = @This();
+
+    pub fn note_on(self: *Self, frequency: f32) void {
+        if (self.voice_count >= VoiceLimit) {
+            return;
+        }
+        const scaling_factor = if (self.voice_count > 0) 1.0 / @sqrt(@as(f32, @floatFromInt(self.voice_count))) else 1;
+
+        self.voices[self.voice_count] = Voice{
+            .sample_rate = self.sample_rate,
+            .frequency = frequency,
+            .scaling_factor = scaling_factor,
+        };
+        self.voice_count += 1;
+
+        self.voices[self.voice_count - 1].note_on(self.time);
+    }
+
+    pub fn note_off(self: *Self, frequency: f32) void {
+        for (&self.voices) |*voice| {
+            if (voice.frequency == frequency) {
+                switch (voice.adsr.state) {
+                    .attack, .decay, .sustain => {
+                        voice.note_off(self.time + 0.00001);
+                        break;
+                    },
+                    else => {},
+                }
+            }
+        }
+    }
+
+    pub fn process(self: *Self, num_samples: usize) void {
+        @memset(self.buffer[0..(self.buffer.len + 1)], 0);
+
+        var i: usize = 0;
+        while (i < self.voice_count) {
+            const voice = &self.voices[i];
+            if (voice.adsr.state == .idle) {
+                self.voice_count -= 1;
+                // remove voice by swapping with last voice
+                if (i != self.voice_count) {
+                    self.voices[i] = self.voices[self.voice_count];
+                }
+                // do not increment i, the swapped voice will be next
+            } else {
+                i += 1;
+            }
+        }
+
+        for (0..num_samples) |n| {
+            for (0..self.voice_count) |j| {
+                const voice = &self.voices[j];
+                self.buffer[n] += (voice.render_sample(self.time + 0.00001) * 0.3);
+            }
+            self.time += self.delta;
+        }
+    }
+};
+
 // Exported functions for WebAssembly interface
 
-var synth = Synth{};
+fn initSynthInternal(samplerate: f32) !usize {
+    const buffer = try allocator.alloc(f32, 512);
+    const s = try allocator.create(Synth);
+    s.* = Synth{
+        .buffer = buffer,
+        .sample_rate = samplerate,
+        .delta = 1 / samplerate,
+    };
+    synth = s;
 
-pub export fn noteOn(freq: f32, current_time: f32) void {
-    synth.noteOn(freq, current_time);
+    return @intFromPtr(buffer.ptr);
 }
 
-pub export fn noteOff(current_time: f32) void {
-    synth.noteOff(current_time);
+pub export fn initSynth(samplerate: f32) u32 {
+    const result = initSynthInternal(samplerate) catch {
+        return 1;
+    };
+
+    return result;
 }
 
-pub export fn triggerNote(freq: f32, current_time: f32) void {
-    synth.triggerNote(freq, current_time);
+var synth: ?*Synth = null;
+
+pub export fn noteOn(frequency: f32) void {
+    if (synth) |s| {
+        s.*.note_on(frequency);
+    }
 }
 
-pub export fn renderSample() f32 {
-    return synth.renderSample();
+pub export fn noteOff(frequency: f32) void {
+    if (synth) |s| {
+        s.*.note_off(frequency);
+    }
+}
+
+pub export fn allOff() void {
+    if (synth) |s| {
+        s.voice_count = 0;
+    }
+}
+
+pub export fn process(num_samples: usize) usize {
+    if (synth) |s| {
+        s.*.process(num_samples);
+    }
+
+    return 0;
 }

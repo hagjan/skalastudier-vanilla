@@ -5,6 +5,7 @@
 @import url('./components/interval-table.css');
 @import url('./components/cents-table.css');
 @import url('./components/controls.css');
+@import url('./components/keys.css');
 
 html {
   font-size: 22px;
