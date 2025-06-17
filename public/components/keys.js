@@ -83,7 +83,8 @@ class KeysComponent extends HTMLElement {
         } else {
           // Send noteOn message with frequency 440 Hz and current time
           synthNode.port.postMessage({ type: 'noteOn', frequency: e.detail.value * this.root });
-          if (!this.hold) setTimeout(() => synthNode.port.postMessage({ type: 'noteOff', frequency: e.detail.value * this.root }), 1000);
+          if (!this.hold) setTimeout(() => synthNode.port.postMessage({ type: 'noteOff', frequency: e.detail.value * this.root }), 300);
+          // synthNode.port.postMessage({ type: 'noteOff', frequency: e.detail.value * this.root })
         }
       });
 
