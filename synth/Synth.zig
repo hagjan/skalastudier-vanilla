@@ -43,7 +43,7 @@ pub fn note_off(self: *Self, frequency: f32) void {
 }
 
 pub fn process(self: *Self, num_samples: usize) void {
-    @memset(self.buffer[0..(self.buffer.len + 1)], 0);
+    @memset(self.buffer[0..self.buffer.len], 0);
 
     var i: usize = 0;
     while (i < self.voice_count) {

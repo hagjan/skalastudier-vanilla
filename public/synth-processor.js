@@ -11,7 +11,7 @@ class SynthProcessor extends AudioWorkletProcessor {
     WebAssembly.instantiate(wasmBytes, { env: { print: function(x) {console.log(x) }}  }).then(wasm => {
       this.wasmInstance = wasm.instance;
       this.exports = wasm.instance.exports;
-      this.bufPtr = this.exports.initSynth(sampleRate)
+      this.bufPtr = this.exports.init(sampleRate)
       // Ready to process audio
     });
 
