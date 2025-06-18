@@ -1,4 +1,6 @@
 const WaveTable = @import("Wavetable.zig");
+const Waveforms = @import("Waveforms.zig");
+const Waveform = Waveforms.WaveForm;
 const Synth = @import("Synth.zig");
 const std = @import("std");
 var allocator = std.heap.wasm_allocator;
@@ -38,6 +40,17 @@ pub export fn noteOff(frequency: f32) void {
 pub export fn allOff() void {
     if (synth) |*s| {
         s.voice_count = 0;
+    }
+}
+
+pub export fn setWaveform(wave: usize) void {
+    if (wave_table) |*table| {
+        switch (wave) {
+            0 => table.set_waveform(Waveform.Sine),
+            1 => table.set_waveform(Waveform.Triangle),
+            2 => table.set_waveform(Waveform.Square),
+            else => {},
+        }
     }
 }
 

@@ -25,7 +25,7 @@ pub fn init(sample_rate: f32) Self {
 pub fn set_waveform(self: *Self, waveform: Waveform) void {
     const oscillator = Oscillator{ .waveform = waveform };
     for (0..TABLE_SIZE) |i| {
-        const phase: f32 = @as(f32, i) / TABLE_SIZE;
+        const phase: f32 = @as(f32, @floatFromInt(i)) / TABLE_SIZE;
         self.wave_table[i] = oscillator.get_sample(phase, 1);
     }
 }
