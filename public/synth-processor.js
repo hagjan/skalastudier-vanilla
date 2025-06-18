@@ -32,6 +32,8 @@ class SynthProcessor extends AudioWorkletProcessor {
       this.exports.noteOff(data.frequency);
     } else if (data.type === 'allOff') {
       this.exports.allOff()
+    } else if (data.type === 'waveform') {
+      this.exports.setWaveform(data.waveform)
     }
   }
 

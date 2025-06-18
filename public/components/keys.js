@@ -60,6 +60,10 @@ class KeysComponent extends HTMLElement {
         
       })
 
+      this.addEventListener('waveform', e => {
+        synthNode.port.postMessage({type: 'waveform', waveform: e.detail.value})
+      })
+
       this.addEventListener('keyup', async (e) => {
         this.playingNotes.delete(e.key)
         const interval = this.interval_list[charmap[e.key]]
@@ -154,6 +158,16 @@ class KeysComponent extends HTMLElement {
 
     this.appendChild(button2)
     this.appendChild(button3)
+    const button4 = document.createElement('button')
+    button4.textContent = "Switch waveform"
+    button4.onclick = () => {
+        wrapper.dispatchEvent(new CustomEvent('waveform', {
+          detail: {value: Math.round(Math.random() * 2)},
+          bubbles: true,
+          composed: true,
+        }))
+    }
+    this.appendChild(button4)
     this.focus()
 
   }
