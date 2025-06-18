@@ -1,3 +1,4 @@
+const WaveTable = @import("Wavetable.zig");
 const Synth = @import("Synth.zig");
 const std = @import("std");
 var allocator = std.heap.wasm_allocator;
@@ -6,14 +7,17 @@ extern fn print(a: u32) void;
 
 // Exported functions for WebAssembly interface
 var synth: ?Synth = null;
+var wave_table: ?WaveTable = null;
 
 pub export fn init(samplerate: f32) u32 {
     const buffer = allocator.alloc(f32, 512) catch return 1;
+    wave_table = WaveTable.init(samplerate);
 
     synth = Synth{
         .buffer = buffer,
         .sample_rate = samplerate,
         .delta = 1 / samplerate,
+        .wave_table = &wave_table.?,
     };
 
     return @intFromPtr(buffer.ptr);

@@ -1,5 +1,6 @@
 const Voice = @import("Voice.zig");
 const constants = @import("constants.zig");
+const WaveTable = @import("Wavetable.zig");
 const SampleRate = constants.SampleRate;
 const VoiceLimit = constants.VoiceLimit;
 
@@ -9,6 +10,7 @@ delta: f32 = 1 / SampleRate,
 voices: [VoiceLimit]Voice = undefined,
 time: f32 = 0,
 voice_count: u8 = 0,
+wave_table: *WaveTable,
 
 const Self = @This();
 
@@ -22,6 +24,7 @@ pub fn note_on(self: *Self, frequency: f32) void {
         .sample_rate = self.sample_rate,
         .frequency = frequency,
         .scaling_factor = scaling_factor,
+        .wave_table = self.wave_table,
     };
     self.voice_count += 1;
 
