@@ -13,7 +13,7 @@ pub fn init(sample_rate: f32) Self {
     var instance = Self{
         .sample_rate = sample_rate,
     };
-    const oscillator = Oscillator{ .waveform = Waveform.Square };
+    const oscillator = Oscillator{ .waveform = Waveform.Sine };
     for (0..TABLE_SIZE) |i| {
         const phase: f32 = @as(f32, @floatFromInt(i)) / TABLE_SIZE;
         instance.wave_table[i] = oscillator.get_sample(phase, 1);

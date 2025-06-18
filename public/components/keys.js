@@ -61,6 +61,7 @@ class KeysComponent extends HTMLElement {
       })
 
       this.addEventListener('waveform', e => {
+        this.waveform = e.detail.value
         synthNode.port.postMessage({type: 'waveform', waveform: e.detail.value})
       })
 
@@ -159,15 +160,35 @@ class KeysComponent extends HTMLElement {
     this.appendChild(button2)
     this.appendChild(button3)
     const button4 = document.createElement('button')
-    button4.textContent = "Switch waveform"
+    button4.textContent = "Sine"
     button4.onclick = () => {
         wrapper.dispatchEvent(new CustomEvent('waveform', {
-          detail: {value: Math.round(Math.random() * 2)},
+          detail: {value: 0},
           bubbles: true,
           composed: true,
         }))
     }
     this.appendChild(button4)
+    const button5 = document.createElement('button')
+    button5.textContent = "Triangle"
+    button5.onclick = () => {
+        wrapper.dispatchEvent(new CustomEvent('waveform', {
+          detail: {value: 1},
+          bubbles: true,
+          composed: true,
+        }))
+    }
+    this.appendChild(button5)
+    const button6 = document.createElement('button')
+    button6.textContent = "Square"
+    button6.onclick = () => {
+        wrapper.dispatchEvent(new CustomEvent('waveform', {
+          detail: {value: 2},
+          bubbles: true,
+          composed: true,
+        }))
+    }
+    this.appendChild(button6)
     this.focus()
 
   }
