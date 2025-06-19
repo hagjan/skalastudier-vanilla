@@ -1,4 +1,4 @@
-x-keys div {
+x-keys .keys {
   margin: 1rem 0;
   display: grid;
   width: 100%;
@@ -9,6 +9,13 @@ x-keys div {
 x-keys button {
   padding: .5rem;
   margin: 0 .2rem .5rem 0;
+}
+
+x-keys .waveform {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  float: right;
 }
 
 x-keys div>button {

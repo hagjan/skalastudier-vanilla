@@ -4,24 +4,24 @@ const charmap = {
   'e': 2,
   'r': 3,
   't': 4,
-  'y':5,
+  'y': 5,
   'u': 6,
-  'i':7,
-  'a':8,
-  's':9,
-  'd':10,
-  'f':11,
-  'g':12,
-  'h':13,
-  'j':14,
-  'k':15,
-  'z':16,
-  'x':17,
-  'c':18,
-  'v':19,
-  'b':20,
-  'n':21,
-  'm':22,
+  'i': 7,
+  'a': 8,
+  's': 9,
+  'd': 10,
+  'f': 11,
+  'g': 12,
+  'h': 13,
+  'j': 14,
+  'k': 15,
+  'z': 16,
+  'x': 17,
+  'c': 18,
+  'v': 19,
+  'b': 20,
+  'n': 21,
+  'm': 22,
 }
 class KeysComponent extends HTMLElement {
 
@@ -47,7 +47,7 @@ class KeysComponent extends HTMLElement {
 
       synthNode.connect(audioContext.destination);
 
-      this.addEventListener('keydown', async (e) => {
+      document.addEventListener('keydown', async (e) => {
         if (this.playingNotes.has(e.key)) return
         this.playingNotes.add(e.key)
         const interval = this.interval_list[charmap[e.key]]
@@ -57,15 +57,16 @@ class KeysComponent extends HTMLElement {
           await audioContext.resume();
         }
         synthNode.port.postMessage({ type: 'noteOn', frequency: interval.value * this.root });
-        
+
       })
 
       this.addEventListener('waveform', e => {
         this.waveform = e.detail.value
-        synthNode.port.postMessage({type: 'waveform', waveform: e.detail.value})
+        synthNode.port.postMessage({ type: 'waveform', waveform: e.detail.value })
       })
 
-      this.addEventListener('keyup', async (e) => {
+      document.addEventListener('keyup', async (e) => {
+        if (this.hold) return
         this.playingNotes.delete(e.key)
         const interval = this.interval_list[charmap[e.key]]
         if (!interval) return
@@ -74,7 +75,7 @@ class KeysComponent extends HTMLElement {
           await audioContext.resume();
         }
         synthNode.port.postMessage({ type: 'noteOff', frequency: interval.value * this.root });
-        
+
       })
 
       this.addEventListener('trigger', async (e) => {
@@ -118,7 +119,7 @@ class KeysComponent extends HTMLElement {
           this.innerHTML = '<p>Invalid JSON format.</p>';
           return;
         }
-        this.interval_list = items.filter(item => this.intervals.includes(item.fraction)).sort((a,b) => a.value > b.value ? 1 : -1)
+        this.interval_list = items.filter(item => this.intervals.includes(item.fraction)).sort((a, b) => a.value > b.value ? 1 : -1)
 
         this.update()
       })
@@ -129,6 +130,7 @@ class KeysComponent extends HTMLElement {
 
   update() {
     const wrapper = document.createElement('div')
+    wrapper.className = "keys";
     this.interval_list.forEach(item => {
       const button = document.createElement('button')
       button.textContent = item.fraction
@@ -139,58 +141,57 @@ class KeysComponent extends HTMLElement {
     this.appendChild(wrapper)
     const button = document.createElement('button')
     button.textContent = "Stop all"
-    button.onclick = () => dispatchNote(wrapper, { value: null })
+    button.onclick = () => {
+      this.playingNotes = new Set()
+      dispatchNote(wrapper, { value: null })
+    };
     this.appendChild(button)
     const button2 = document.createElement('button')
     const button3 = document.createElement('button')
     button2.textContent = "Trigger mode"
     button2.disabled = true
     button2.onclick = () => {
-        this.hold = false
-        button3.disabled = false
-        button2.disabled = true
+      this.hold = false
+      this.playingNotes = new Set()
+      button3.disabled = false
+      button2.disabled = true
     }
     button3.textContent = "Hold mode"
     button3.onclick = () => {
-        this.hold = true
-        button2.disabled = false
-        button3.disabled = true
+      this.hold = true
+      button2.disabled = false
+      button3.disabled = true
     }
+    this.appendChild(button2);
+    this.appendChild(button3);
 
-    this.appendChild(button2)
-    this.appendChild(button3)
-    const button4 = document.createElement('button')
-    button4.textContent = "Sine"
-    button4.onclick = () => {
+
+    const waveformSelect = document.createElement("div");
+    waveformSelect.className = "waveform";
+    ["sine", "triangle", "square"].forEach((waveform, index) => {
+      const inputWrapper = document.createElement("div");
+      const input = document.createElement('input')
+      const label = document.createElement('label')
+      label.textContent = waveform
+      label.htmlFor = waveform
+      input.id = waveform
+      input.defaultChecked = index == 0
+      input.type = "radio"
+      input.name = "waveform"
+      input.onclick = () => {
         wrapper.dispatchEvent(new CustomEvent('waveform', {
-          detail: {value: 0},
+          detail: { value: index },
           bubbles: true,
           composed: true,
         }))
-    }
-    this.appendChild(button4)
-    const button5 = document.createElement('button')
-    button5.textContent = "Triangle"
-    button5.onclick = () => {
-        wrapper.dispatchEvent(new CustomEvent('waveform', {
-          detail: {value: 1},
-          bubbles: true,
-          composed: true,
-        }))
-    }
-    this.appendChild(button5)
-    const button6 = document.createElement('button')
-    button6.textContent = "Square"
-    button6.onclick = () => {
-        wrapper.dispatchEvent(new CustomEvent('waveform', {
-          detail: {value: 2},
-          bubbles: true,
-          composed: true,
-        }))
-    }
-    this.appendChild(button6)
+      }
+      inputWrapper.appendChild(input)
+      inputWrapper.appendChild(label)
+      waveformSelect.appendChild(inputWrapper)
+    })
+
+    this.appendChild(waveformSelect);
     this.focus()
-
   }
 }
 
